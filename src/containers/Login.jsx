@@ -7,7 +7,7 @@ const Login = () => {
         <img className="Logo" src="/Assets/logo_yard_sale.svg" alt="Logo" />
         <h1 className="Titulo">Iniciar Sesion</h1>
         <form action="submit">
-          <label className="FormLabel" for="Email">
+          <label className="FormLabel" htmlFor="Email">
             Email
           </label>
           <input
@@ -16,7 +16,7 @@ const Login = () => {
             placeholder="Email"
             className="Input-Email"
           />
-          <label className="FormLabel" for="Password">
+          <label className="FormLabel" htmlFor="Password">
             Contraseña
           </label>
           <input

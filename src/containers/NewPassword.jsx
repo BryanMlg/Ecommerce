@@ -8,7 +8,7 @@ const NewPass = () => {
         <h1 className="Titulo">Crear nueva contraseña</h1>
         <p className="Parrafo">Ingresa nueva contraseña para tu cuenta</p>
         <form action="submit">
-          <label className="LabelPassword" for="Password">
+          <label className="LabelPassword" htmlFor="Password">
             Contraseña
           </label>
           <input
@@ -17,7 +17,7 @@ const NewPass = () => {
             placeholder="******"
             className="Input-Contraseña"
           />
-          <label className="Re-LabelPassword" for="Re-Password">
+          <label className="Re-LabelPassword" htmlFor="Re-Password">
             Re-Escriba Contraseña
           </label>
           <input
