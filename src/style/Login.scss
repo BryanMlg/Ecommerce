@@ -1,0 +1,90 @@
+@use "./Var.scss";
+
+.Main-Container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items:center;
+}
+.Main-Container .Container{
+    display: grid;
+    grid-template-columns: auto;
+    width: 300px;
+    border: 2px solid var(--text-input-field);
+    padding: 20px;
+    border-radius: 8px;
+}
+.Main-Container .Container .Logo{
+    width: 150px;
+    margin-bottom: 32px;
+    justify-self: center;
+    display: none;
+}
+
+.Main-Container .Container .Titulo{
+    font-size: var(--Lg);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+
+.Main-Container .Container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.Main-Container .Container form .FormLabel{
+    font-size: var(--Sm);
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.Main-Container .Container form .Input-Email{
+    margin-bottom: 16px;
+    border: none;
+    background-color: var(--text-input-field);
+    border-radius: 10px;
+    height: 24px;
+    padding: 6px;
+    margin-bottom: 16px;
+    font-size: var(--Sm);
+}
+
+.Main-Container .Container form #BotonC{
+    background-color: var(--hospital-green);
+    height: 32px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+} 
+
+.Main-Container #BotonB{
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+    height: 32px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.Main-Container #BotonB:hover{
+    background-color: var(--hospital-green);
+    color: black;
+}
+
+@media (max-width: 640px) {
+    .Main-Container .Container .Logo{
+        display: block;
+    }
+    .Main-Container #BotonB {
+        margin-top: 100px;
+    }
+
+}
+
+
+
+
+
+
