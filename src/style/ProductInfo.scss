@@ -1,0 +1,88 @@
+@use "./Var.scss";
+
+/*.Product-Detail {
+    width: 360px;
+    padding-bottom: 24px;
+    position: absolute;
+    right: 0;
+  }*/
+  
+  aside .Product-Detail-Close {
+    background: var(--white);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .Product-Detail-Close:hover {
+    cursor: pointer;
+  }
+
+  aside .Product-Detail-Close img{
+    display: flex;
+    width: 10px;
+    height: 10px;
+  }
+
+aside .ProductImg{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15%;
+}
+
+aside .Dots{
+    width: 300px;
+    text-align: center;
+}
+
+aside .Dots span:nth-child(1){
+   background-color: #000000;
+}
+
+aside .Dots .dot {
+    
+    height: 10px;
+    width: 10px;
+    background-color: var(--very-light-pink);
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-flex
+}
+aside .Product-Info{
+    width: 300px;
+}
+aside .Product-Info p:first-child{
+font-weight: bold;
+font-size: var(--Lg);
+}
+aside .Product-Info p:nth-child(2){
+    font-size: var(--Md);
+}
+aside .Product-Info p:nth-child(3),aside .Product-Info p:nth-child(2){
+color:var(--very-light-pink);
+}
+
+aside .Product-Info p:nth-child(3){
+    font-size: var(--Sm);
+}
+
+aside .Product-Info .AddCart{
+    background-color: var(--hospital-green);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+    cursor: pointer;
+}

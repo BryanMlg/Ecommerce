@@ -1,0 +1,28 @@
+@use "./Var.scss";
+
+.Shopping{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+.Shopping figure{
+    margin: 0;
+ }
+
+ .Shopping img{
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+ .Shopping p:nth-child(2){
+    color: var(--very-light-pink);
+}
+ .Shopping p:nth-child(3){
+    font-size: var(--Md);
+    font-weight: bold;
+}

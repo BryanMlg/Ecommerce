@@ -2,11 +2,10 @@ import React from "react";
 
 
 // eslint-disable-next-line react/prop-types
-const Loyout = ({children}) =>{
+export default function Layout({children}){
     return(
-        <div className="Loyout">
+        <div className="Layout">
             {children}
         </div>
     );
 }
-export default Loyout;

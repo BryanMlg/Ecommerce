@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/NewPassword.scss";
-const NewPass = () => {
+
+export default function NewPass () {
   return (
     <div className="Main-Container">
       <div className="Container">
@@ -35,4 +36,4 @@ const NewPass = () => {
   );
 };
 
-export default NewPass;
+ 

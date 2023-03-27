@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/Login.scss";
-const Login = () => {
+
+export default function Login ()  {
   return (
     <div className="Main-Container">
       <div className="Container">
@@ -36,4 +37,3 @@ const Login = () => {
     </div>
   );
 };
-export default Login;

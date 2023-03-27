@@ -1,0 +1,130 @@
+@use "../style/Var.scss";
+
+header nav .Menu {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+header nav .Logo {
+    width: 125px;
+}
+
+header nav .Left {
+    display: flex;
+}
+
+header nav .Left .ListaLeft {
+    margin-left: 50%;
+}
+
+header nav .Left ul,
+header nav .Right ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    height: 60px;
+}
+
+header nav .Left ul li a,
+header nav .Right ul li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+header nav .Left ul li a:hover {
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+}
+
+header nav .Right .Email {
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 50px;
+}
+
+header nav .Right ul li .SubMenu{
+    margin-left: 10px;
+    transform: rotate(90deg);
+}
+
+header nav .Right .Shopping {
+    position: relative;
+}
+
+header nav .Right div {
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1175px){
+    header nav .Left .ListaLeft {
+        margin-left: 40%; 
+    }
+}
+
+@media (max-width: 1148px){
+    header nav .Left .ListaLeft {
+        margin-left: 35%; 
+    }
+}
+
+@media (max-width: 1162px){
+    header nav .Left .ListaLeft {
+        margin-left: 25%; 
+    }
+}
+
+@media (max-width: 1051px){
+    header nav .Left .ListaLeft {
+        margin-left: 15%; 
+    }
+}
+
+@media (max-width: 1006px){
+    header nav .Left .ListaLeft {
+        margin-left: 0; 
+    }
+}
+
+@media (max-width: 933px){
+    header nav .Right ul li .SubMenu{
+        margin-left: 50%;
+    }
+    header nav .Right .Email{
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    header nav .Menu {
+      display: block;
+    }
+    header nav .Left ul {
+      display: none;
+    }
+    header nav .Right .Email {
+      display: none;
+    }
+  }
