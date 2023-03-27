@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/NotFound.scss"
+import "@style/NotFound.scss"
 export default function NotFound() {
   return (
     <div id="notfound">

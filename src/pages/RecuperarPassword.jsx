@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/RecuperarPassword.scss";
+import "@style/RecuperarPassword.scss";
 
 export default function RecuperarPassword() {
   return (

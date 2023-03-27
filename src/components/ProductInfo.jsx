@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/ProductInfo.scss";
+import "@style/ProductInfo.scss";
 
 export default function ProductInfo() {
   return (

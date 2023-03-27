@@ -1,6 +1,6 @@
 import React from "react";
-import ProductInfo from "../components/ProductInfo.jsx";
-import "../style/ProductDetail.scss";
+import ProductInfo from "@components/ProductInfo.jsx";
+import "@style/ProductDetail.scss";
 
 export default function ProductDetail ()  {
   return (

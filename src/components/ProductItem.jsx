@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/ProductItem.scss";
+import "@style/ProductItem.scss";
 export default function ProductItem ()  {
 	return (
 		<div className="ProductItem">

@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/NewAccount.scss";
+import "@style/NewAccount.scss";
 export default function NewAccount(){
     return(
         <div className="Main-Container">

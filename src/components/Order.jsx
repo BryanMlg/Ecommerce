@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/Order.scss";
+import "@style/Order.scss";
 export default function Order  ()  {
 	return (
 		<div className="Order">

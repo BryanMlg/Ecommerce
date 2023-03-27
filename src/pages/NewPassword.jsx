@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/NewPassword.scss";
+import "@style/NewPassword.scss";
 
 export default function NewPass () {
   return (

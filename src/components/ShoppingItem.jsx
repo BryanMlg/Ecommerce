@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/ShoppingItem.scss";
+import "@style/ShoppingItem.scss";
 
 export default function ShoppingItem() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import OrderItem from "../components/OrderItem.jsx";
-import "../style/MyOrder.scss";
+import OrderItem from "@components/OrderItem.jsx";
+import "@style/MyOrder.scss";
 
 export default function MyOrder () {
   return (
