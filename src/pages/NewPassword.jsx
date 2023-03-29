@@ -5,7 +5,7 @@ export default function NewPass () {
   return (
     <div className="Main-Container">
       <div className="Container">
-        <img className="Logo" src="/Assets/logo_yard_sale.svg" alt="Logo" />
+        <img className="Logo" src="@assets/logo_yard_sale.svg" alt="Logo" />
         <h1 className="Titulo">Crear nueva contraseña</h1>
         <p className="Parrafo">Ingresa nueva contraseña para tu cuenta</p>
         <form action="submit">

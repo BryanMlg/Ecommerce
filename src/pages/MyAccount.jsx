@@ -9,9 +9,9 @@ export default function MyAccount  ()  {
 				<form action="/" className="form">
 					<div>
 						<label htmlFor="name" className="label">Name</label>
-						<p className="value">Camila Yokoo</p>
+						<p className="value">Bryan Guerra</p>
 						<label htmlFor="email" className="label">Email</label>
-						<p className="value">camilayokoo@gmail.com</p>
+						<p className="value">bryanmlg2018@gmail.com</p>
 						<label htmlFor="password" className="label">Password</label>
 						<p className="value">*********</p>
 					</div>

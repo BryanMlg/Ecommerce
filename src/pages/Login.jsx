@@ -5,7 +5,7 @@ export default function Login ()  {
   return (
     <div className="Main-Container">
       <div className="Container">
-        <img className="Logo" src="/Assets/logo_yard_sale.svg" alt="Logo" />
+        <img className="Logo" src="@assets/logo_yard_sale.svg" alt="Logo" />
         <h1 className="Titulo">Iniciar Sesion</h1>
         <form action="submit">
           <label className="FormLabel" htmlFor="Email">

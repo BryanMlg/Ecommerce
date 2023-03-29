@@ -5,7 +5,7 @@ export default function ProductInfo() {
   return (
     <aside class="Product-Detail">
       <div class="Product-Detail-Close">
-        <img src="/Assets/icon_close.png" alt="close" />
+        <img src="@assets/icon_close.png" alt="close" />
       </div>
       <img
         class="ProductImg"
@@ -27,7 +27,7 @@ export default function ProductInfo() {
           doloremque?
         </p>
         <button class="AddCart">
-          <img src="/Assets/bt_add_to_cart.svg" alt="add to cart" />
+          <img src="@assets/bt_add_to_cart.svg" alt="add to cart" />
           Agregar a carrito
         </button>
       </div>

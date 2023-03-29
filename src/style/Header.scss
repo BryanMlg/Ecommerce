@@ -51,10 +51,11 @@ header nav .Right .Email {
     color: var(--very-light-pink);
     font-size: var(--sm);
     margin-right: 50px;
+    cursor: pointer;
 }
 
 header nav .Right ul li .SubMenu{
-    margin-left: 10px;
+    margin-left: 5px;
     transform: rotate(90deg);
 }
 
@@ -123,7 +124,7 @@ header nav .Right .Shopping .Carrito{
     }
 }
 
-@media (max-width: 911px) {
+@media (max-width: 935px) {
     header nav .Menu {
       display: block;
     }

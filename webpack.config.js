@@ -3,16 +3,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizer = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const DotEnv = require("dotenv-webpack");
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    assetModuleFilename: "assets/[hash][ext][query]",
     clean:true,
   },
   mode:"production",
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
+    alias: {
+      "@assets": path.resolve(__dirname, "./src/assets"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@containers": path.resolve(__dirname, "./src/containers"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@routes": path.resolve(__dirname, "./src/routes"),
+      "@style": path.resolve(__dirname, "./src/style"),
+      "@scripts": path.resolve(__dirname, "./src/scripts"),
+      
+    }
   },
   module: {
     rules: [
@@ -28,8 +40,12 @@ module.exports = {
         use:[{loader: "html-loader"}]
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.css|.sass|.scss/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.png|.jpg|.svg|.gif/,
+        type: "asset/resource",
       },
     ],
   },
@@ -58,5 +74,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new DotEnv(),
   ],
 };

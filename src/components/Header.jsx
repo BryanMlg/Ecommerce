@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "@style/Header.scss";
 import MenuLogo from "@assets/icon_menu.svg";
 import Logo from  "@assets/logo_yard_sale.svg";
 import SubFlecha from "@assets/flechita.svg";
 import Carrito from "@assets/icon_shopping_cart.svg";
+import Menu from "@components/Menu.jsx";
 const Header = () => {
+  const [toggle, setToogle] = useState(false);
+  const toggleState = () =>{
+    setToogle(!toggle);
+  }
   return (
     <header>
       <nav>
@@ -22,16 +27,17 @@ const Header = () => {
         </div>
         <div className="Right">
           <ul>
-            <li className="Email">bryanmlg2018@gmail.com
+            <li className="Email" onClick={toggleState}>
+                bryanmlg2018@gmail.com
                 <img className="SubMenu" src={SubFlecha} alt="Flechita"/>
             </li>
-            
             <li className="Shopping">
               <img className="Carrito" src={Carrito} alt="Carrito" />
               <div></div>
             </li>
           </ul>
         </div>
+        {toggle && <Menu/>}
       </nav>
     </header>
   );
