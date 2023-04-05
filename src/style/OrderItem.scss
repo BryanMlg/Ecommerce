@@ -18,6 +18,11 @@
     border-radius: 20px;
     object-fit: cover;
 }
+.Shopping .Close-Img{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
 
  .Shopping p:nth-child(2){
     color: var(--very-light-pink);

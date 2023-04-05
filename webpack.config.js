@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    assetModuleFilename: "assets/[hash][ext][query]",
+    assetModuleFilename: "assets/[name][ext][query]",
     clean:true,
   },
   mode:"production",
@@ -23,6 +23,8 @@ module.exports = {
       "@routes": path.resolve(__dirname, "./src/routes"),
       "@style": path.resolve(__dirname, "./src/style"),
       "@scripts": path.resolve(__dirname, "./src/scripts"),
+      "@context": path.resolve(__dirname, "./src/context"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
       
     }
   },
@@ -44,7 +46,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.png|.jpg|.svg|.gif/,
+        test: /\.png|.jpg|.svg|.gif$/,
         type: "asset/resource",
       },
     ],

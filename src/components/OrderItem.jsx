@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '@style/OrderItem.scss';
-
-export default function OrderItem ()  {
+import CloseIcon from "@assets/icon_close.png"
+import ContextApp from "@context/ContextApp.js"
+export default function OrderItem ({product})  {
+  const {RemoveFromCart} = useContext(ContextApp);
 	return (
 		<div className="MyOrderContent">
           <div className="Shopping">
             <figure>
               <img
-                src="https://images.pexels.com/photos/4709285/pexels-photo-4709285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Pc-Desktop"
+                src={product.images[0]}
+                alt={product.title}
               />
             </figure>
-            <p>Pc-Desktop</p>
-            <p>8,000.00 Q</p>
+            <p>{product.title}</p>
+            <p>{product.price +"$"}</p>
+            <img src={CloseIcon} alt="Close" className="Close-Img" onClick={() => RemoveFromCart(product)}/>
           </div>
         </div>
       

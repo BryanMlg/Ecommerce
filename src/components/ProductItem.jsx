@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "@style/ProductItem.scss";
 import SvgCarrito from "@assets/bt_add_to_cart.svg";
-
+import ContextApp from "@context/ContextApp";
 export default function ProductItem ({product})  {
+	const { addToCart } = useContext(ContextApp);
+
+	const HandleClick = item => {
+		addToCart(item);
+	}
 
 	return (
 		<div className="ProductItem">
@@ -12,7 +17,7 @@ export default function ProductItem ({product})  {
 					<p>{product.price}$</p>
 					<p>{product.title}</p>
 				</div>
-				<figure>
+				<figure onClick={() => HandleClick(product)}>
 					<img src={SvgCarrito} alt="AddCart" />
 				</figure>
 			</div>

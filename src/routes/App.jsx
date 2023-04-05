@@ -12,8 +12,12 @@ import Orders from "@pages/Orders.jsx";
 import CheckOut from "@pages/CheckOut.jsx";
 import CreateAccount from "@pages/CreateAccount.jsx";
 import Prueba from "@components/Menu.jsx";
+import ContextApp from "@context/ContextApp";
+import useInitialState from "@hooks/useStateCarro";
 const App = () => {
+  const InitialState = useInitialState();
   return (
+    <ContextApp.Provider value={InitialState}>
     <Layout>
       <BrowserRouter>
         <Routes>
@@ -31,6 +35,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </Layout>
+    </ContextApp.Provider>
   );
 };
 export default App;

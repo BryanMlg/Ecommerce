@@ -9,6 +9,11 @@
     position: absolute;
     top:60px;
     right: 160px;
+    background-color: white;
+    -webkit-animation:appear .25s ease-out 0s 1 normal;
+-moz-animation:appear .25s ease-out 0s 1 normal;
+-ms-animation:appear .25s ease-out 0s 1 normal;
+animation:appear .25s ease-out 0s 1 normal;
   }
 
   .desktop-menu ul {
@@ -37,3 +42,11 @@
     margin-bottom: 20px;
     display: inline-block;
   }
+  @-webkit-keyframes appear {
+    0%{ opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+    60%{ opacity: 1; -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+    }
+    @keyframes appear {
+    0%{ opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+    60%{ opacity: 1; transform: scale3d(1,1,1); }
+    }
