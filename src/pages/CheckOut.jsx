@@ -1,7 +1,6 @@
 import React from 'react';
 import OrderItem from '@components/OrderItem.jsx';
-import Menu from '@components/Menu.jsx';
-import '@style/Checkout.scss';
+import '@style/CheckOut.scss';
 
 export default function Checkout ()  {
 	return (
