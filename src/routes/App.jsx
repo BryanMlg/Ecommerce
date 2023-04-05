@@ -1,4 +1,5 @@
 import React from "react";
+import "@style/global.scss";
 import Layout from "@containers/Layout.jsx";
 import NewPassword from "@pages/NewPassword.jsx";
 import RecuperarPassword from "@pages/RecuperarPassword.jsx";
@@ -18,23 +19,23 @@ const App = () => {
   const InitialState = useInitialState();
   return (
     <ContextApp.Provider value={InitialState}>
-    <Layout>
       <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Inicio />} />
-          <Route path="/new-password" element={<NewPassword />} />
-          <Route path="/password-recovery" element={<RecuperarPassword />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/new-account" element={<NewAccount/>} />
-          <Route path="/my-account" element={<MyAccount/>} />
-          <Route path="/orders" element={<Orders/>} />
-          <Route path="/checkout" element={<CheckOut/>} />
-          <Route path="/create-account" element={<CreateAccount/>} />
-          <Route path="/Prueba" element={<Prueba/>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<Inicio />} />
+            <Route path="/new-password" element={<NewPassword />} />
+            <Route path="/password-recovery" element={<RecuperarPassword />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/new-account" element={<NewAccount />} />
+            <Route path="/my-account" element={<MyAccount />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/checkout" element={<CheckOut />} />
+            <Route path="/create-account" element={<CreateAccount />} />
+            <Route path="/Prueba" element={<Prueba />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
-    </Layout>
     </ContextApp.Provider>
   );
 };
