@@ -9,7 +9,7 @@ const useGetProducts = (id) => {
       try {
         const response = await fetch(apiURl);
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.filter((item) =>{return item}));
       } catch (error) {
         console.error(error);
       }
