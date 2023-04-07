@@ -1,4 +1,4 @@
-@use "@style/Var.scss";
+@import "@style/Var.scss";
 
 .MyOrder {
 	width: 360px;
@@ -10,7 +10,7 @@
 	top: 60px;
 	bottom: 0;
 	border-radius: 6px;
-	border: 1px solid var(--very-light-pink);
+	border: 1px solid $--very-light-pink;
 	animation: swipedown 1s ease;
 	overflow-y: auto;
 }
@@ -22,16 +22,17 @@
 	margin-right: 14px;
 }
 .title {
-	font-size: var(--lg);
+	font-size: $--Lg;
 	font-weight: bold;
 }
 
-.order p:nth-child(1) {
+.order{
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 }
+
 .order p span:nth-child(1) {
-	font-size: var(--md);
+	font-size: $--Md;
 	font-weight: bold;
 }
 .order p:nth-child(2) {
@@ -40,13 +41,13 @@
 }
 
 .primary-button {
-	background-color: var(--hospital-green);
+	background-color: $--hospital-green;
 	border-radius: 8px;
 	border: none;
-	color: var(--white);
+	color: $--white;
 	width: 100%;
 	cursor: pointer;
-	font-size: var(--md);
+	font-size: $--Md;
 	font-weight: bold;
 	height: 50px;
 	margin-bottom: 20px;

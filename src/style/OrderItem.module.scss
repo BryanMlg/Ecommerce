@@ -1,4 +1,4 @@
-@use "@style/Var.scss";
+@import "@style/Var.scss";
 
 .Shopping{
     display: grid;
@@ -25,9 +25,9 @@
 }
 
  .Shopping p:nth-child(2){
-    color: var(--very-light-pink);
+    color: $--very-light-pink;
 }
  .Shopping p:nth-child(3){
-    font-size: var(--Md);
+    font-size: $--Md;
     font-weight: bold;
 }

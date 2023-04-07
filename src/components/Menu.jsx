@@ -1,12 +1,11 @@
 import React from "react";
-import "@style/Menu.scss";
-
+import Style from "@style/Menu.module.scss";
 export default function Menu() {
   return (
-    <div className="desktop-menu">
+    <div className={Style["desktop-menu"]}>
       <ul>
         <li>
-          <a href="/" className="title">
+          <a href="/" className={Style.title}>
             My orders
           </a>
         </li>
