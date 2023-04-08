@@ -10,7 +10,6 @@ import Login from "@pages/Login.jsx";
 import NewAccount from "@pages/NewAccount.jsx";
 import MyAccount from "@pages/MyAccount.jsx";
 import Orders from "@pages/Orders.jsx";
-import CheckOut from "@pages/CheckOut.jsx";
 import CreateAccount from "@pages/CreateAccount.jsx";
 import Prueba from "@components/Menu.jsx";
 import ContextApp from "@context/ContextApp";
@@ -29,7 +28,6 @@ const App = () => {
             <Route path="/new-account" element={<NewAccount />} />
             <Route path="/my-account" element={<MyAccount />} />
             <Route path="/orders" element={<Orders />} />
-            <Route path="/checkout" element={<CheckOut />} />
             <Route path="/create-account" element={<CreateAccount />} />
             <Route path="/Prueba" element={<Prueba />} />
             <Route path="*" element={<NotFound />} />

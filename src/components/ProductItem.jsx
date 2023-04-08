@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import SvgCarrito from '@assets/bt_add_to_cart.svg';
 import ContextApp from '@context/ContextApp';
 import Style from '@style/ProductItem.module.scss';
 import Image from 'next/image';
-import AgregadoCarrito from "@assets/bt_added_to_cart.svg"
+import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
 export default function ProductItem({ product }) {
   const { state, addToCart } = useContext(ContextApp);
 

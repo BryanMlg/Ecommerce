@@ -1,29 +1,20 @@
-export default {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "amd": true,
-        "node": true,
+module.exports = {
+    root: true,
+    env: {
+      browser: true,
+      amd: true,
+      node: true,
+      es6: true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "next/core-web-vitals",
-        "next",
-        "plugin:jsx-a11y/recommended",
-        "plugin:prettier/recommended",
+    extends: [
+      'eslint:recommended',
+      'plugin:jsx-a11y/recommended',
+      'plugin:prettier/recommended',
+      'next',
+      'next/core-web-vitals',
     ],
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "semi": ["error", "always"]
-    },
-    
-}
+    rules: {
+      'semi': ['error', 'always'],
+      'prettier/prettier': 0,
+    }
+  };

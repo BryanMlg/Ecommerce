@@ -1,3 +1,3 @@
-const fs = require("fs");
+const fs = require('fs');
 
-fs.writeFileSync("./.env", `URL_API = https://randomuser.me/api/\n`);
+fs.writeFileSync('./.env', `URL_API = https://randomuser.me/api/\n`);

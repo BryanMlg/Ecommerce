@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "@style/Login.scss";
 import Logo from "@assets/logo_yard_sale.svg";
-
+import Image from "next/image";
 export default function Login ()  {
   const form = useRef(null);
 	const HandleSubmit = (event) => {
@@ -10,13 +10,13 @@ export default function Login ()  {
 		const data = {
 			username: formData.get('email'),
 			password: formData.get('password')
-		}
+		};
 		console.log(data);
-	}
+	};
   return (
     <div className="Main-Container">
       <div className="Container">
-        <img className="Logo" src={Logo} alt="Logo" />
+        <Image className="Logo" src={Logo} alt="Logo" />
         <h1 className="Titulo">Iniciar Sesion</h1>
         <form action="/" ref={form}>
           <label className="FormLabel" htmlFor="Email">

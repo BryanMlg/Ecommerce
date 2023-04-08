@@ -1,5 +1,5 @@
 import React from "react";
-import "@style/NotFound.scss"
+import "@style/NotFound.scss";
 export default function NotFound() {
   return (
     <div id="notfound">
@@ -12,7 +12,7 @@ export default function NotFound() {
           The page you are looking for might have been removed had its name
           changed or is temporarily unavailable.
         </p>
-        <a href="/">Go To Homepage</a>
+        <a href="*">Go To Homepage</a>
       </div>
     </div>
   );

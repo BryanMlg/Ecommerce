@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import ProductItem from '@components/ProductItem.jsx';
 import Style from'@style/ProductList.module.scss';
 import getData from '@hooks/getData.js';
