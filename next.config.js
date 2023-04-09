@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ['api.lorem.space', 'cdn.pixabay.com', 'placeimg.com', 'www.libreriahuequito.com', 'thumbs.dreamstime.com'],
   },
   env: {
-    API_URL: process.env.API_URL,
+    API: process.env.API_URL
   },
 };
 
