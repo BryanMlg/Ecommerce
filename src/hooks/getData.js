@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-const API = 'https://api.escuelajs.co/api/v1/';
+const API = process.env.API_URL;
 
 const useGetProducts = (id) => {
   const apiURl = id ? `${API}products/${id}` : `${API}products`;
