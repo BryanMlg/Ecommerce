@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ['api.lorem.space', 'cdn.pixabay.com', 'placeimg.com', 'www.libreriahuequito.com', 'thumbs.dreamstime.com'],
   },
-  env: {
-    API: process.env.NEXT_PUBLIC_API_URL
-  },
 };
 
 const withPWA = require('next-pwa')({
