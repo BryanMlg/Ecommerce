@@ -1,8 +1,8 @@
-@use "@style/Var.scss";
+@import "@style/Var.scss";
 
 .Main-Container{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: grid;
     place-items:center;
 }
@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: auto;
     width: 300px;
-    border: 2px solid var(--text-input-field);
+    border: 2px solid $--text-input-field;
     padding: 20px;
     border-radius: 8px;
 }
@@ -22,7 +22,7 @@
 }
 
 .Main-Container .Container .Titulo{
-    font-size: var(--Lg);
+    font-size: $--Lg;
     margin-bottom: 24px;
     text-align: center;
 }
@@ -34,23 +34,23 @@
 }
 
 .Main-Container .Container form .FormLabel{
-    font-size: var(--Sm);
+    font-size: $--Sm;
     font-weight: bold;
     margin-bottom: 16px;
 }
 .Main-Container .Container form .Input-Email{
     margin-bottom: 16px;
     border: none;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
     border-radius: 10px;
     height: 24px;
     padding: 6px;
     margin-bottom: 16px;
-    font-size: var(--Sm);
+    font-size: var($--Sm);
 }
 
-.Main-Container .Container form #BotonC{
-    background-color: var(--hospital-green);
+.Main-Container .Container form .primary-button{
+    background-color: $--hospital-green;
     height: 32px;
     cursor: pointer;
     border: none;
@@ -59,17 +59,17 @@
     margin-top: 10px;
 } 
 
-.Main-Container #BotonB{
-    background-color: var(--white);
+.Main-Container .secondary-button{
+    background-color: $--white;
     border-radius: 10px;
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+    border: 1px solid $--hospital-green;
+    color: $--hospital-green;
     height: 32px;
     cursor: pointer;
     margin-top: 20px;
 }
 .Main-Container #BotonB:hover{
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     color: black;
 }
 

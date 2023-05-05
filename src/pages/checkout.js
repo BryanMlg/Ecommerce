@@ -2,7 +2,24 @@ import React from 'react';
 import OrderItem from '@components/OrderItem.jsx';
 import Style from '@style/CheckOut.module.scss';
 import Head from 'next/head';
+import { useContext, useState, useEffect } from 'react';
+import ContextApp from '@context/ContextApp';
 export default function Checkout() {
+  const {
+    state: { cart },
+  } = useContext(ContextApp);
+  const Total = () => {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+    const Pago = cart.reduce(reducer, 0);
+    return Pago;
+  };
+  const [currentDate, setCurrentDate] = useState(new Date());
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <>
       <Head>
@@ -14,12 +31,14 @@ export default function Checkout() {
           <div className={Style['Checkout-content']}>
             <div className={Style.order}>
               <p>
-                <span>03.25.21</span>
-                <span>6 articles</span>
+                <span>{currentDate.toLocaleDateString()}</span>
+                <span>article {cart.length > 0 && cart.length}</span>
               </p>
-              <p>$560.00</p>
+              <p>${Total()}</p>
             </div>
-            <OrderItem />
+            {cart.map((product) => (
+              <OrderItem product={product} key={`orderitem-${product.id}`} />
+            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from '@style/Menu.module.scss';
+import Link from 'next/link';
 export default function Menu() {
   return (
     <div className={Style['desktop-menu']}>
@@ -15,7 +16,7 @@ export default function Menu() {
         </li>
 
         <li>
-          <a href="*">Sign out</a>
+          <Link href="/login">Signin</Link>
         </li>
       </ul>
     </div>

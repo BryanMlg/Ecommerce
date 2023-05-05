@@ -1,20 +1,19 @@
 @import "@style/Var.scss";
 
-header nav .Menu {
+ .Menu {
     display: none;
     margin-top: 18px;
 }
 
 .Navigation nav {
     display: flex;
-    justify-content: space-between;
-    padding: 0 24px;
     border-bottom: 1px solid $--very-light-pink;
+    justify-content: space-between;
 }
 
 header nav .Logo {
     margin-top: 18px;
-    width: auto;
+    margin-left: 15px;
 }
 
 header nav .Left {
@@ -22,11 +21,12 @@ header nav .Left {
 }
 
 header nav .Left .ListaLeft {
-    margin-left: 50%;
+    margin-left: 15px;
 }
 
 header nav .Left ul,
 header nav .Right ul {
+    
     list-style: none;
     display: flex;
     padding: 0;
@@ -52,7 +52,7 @@ header nav .Left ul li a:hover {
 header nav .Right .Email {
     color: $--very-light-pink;
     font-size: $--Md;
-    margin-right: 100px;
+    margin-right: 55px;
     cursor: pointer;
 }
 
@@ -83,50 +83,12 @@ header nav .Right .Shopping .Carrito{
     height: 25px;
     width: 25px;
     top: -13px;
-    right: 25px;
+    right: 15px;
     position: absolute;
 }
-@media (max-width: 1175px){
-    header nav .Left .ListaLeft {
-        margin-left: 40%; 
-    }
-}
 
-@media (max-width: 1148px){
-    header nav .Left .ListaLeft {
-        margin-left: 35%; 
-    }
-}
 
-@media (max-width: 1162px){
-    header nav .Left .ListaLeft {
-        margin-left: 25%; 
-    }
-}
-
-@media (max-width: 1051px){
-    header nav .Left .ListaLeft {
-        margin-left: 15%; 
-    }
-}
-
-@media (max-width: 1006px){
-    header nav .Left .ListaLeft {
-        margin-left: 5%; 
-    }
-}
-
-@media (max-width: 933px){
-    header nav .Right ul li .SubMenu{
-        margin-left: 50%;
-    }
-    header nav .Right .Email{
-        margin-top: 20px;
-        margin-left: 15px;
-    }
-}
-
-@media (max-width: 935px) {
+@media (max-width:718px) {
     header nav .Menu {
       display: block;
     }
@@ -136,4 +98,11 @@ header nav .Right .Shopping .Carrito{
     header nav .Right .Email {
       display: none;
     }
+    header nav .Logo{
+        margin-left: 0;
+    }
+    header nav .Right .Shopping .Carrito{
+        right: 0;
+    }
   }
+ 

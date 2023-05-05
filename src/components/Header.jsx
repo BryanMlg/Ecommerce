@@ -10,6 +10,7 @@ import Menu from '@components/Menu.jsx';
 import ContextApp from '@context/ContextApp.js';
 import MyOrder from '@containers/MyOrder.jsx';
 import Style from '@style/Header.module.scss';
+import MenuMobile from '@components/MenuMobile.jsx';
 import Link from 'next/link';
 const Header = () => {
   const {
@@ -17,40 +18,38 @@ const Header = () => {
     state,
     toggleMenu,
     toggleOrder,
+    toggleMenuMobile,
   } = useContext(ContextApp);
   return (
     <header className={Style.Navigation}>
       <nav>
-        <Image className={Style.Menu} src={MenuLogo} alt="Menu" />
+        <Image className={Style.Menu} src={MenuLogo} alt="Menu" onClick={() => toggleMenuMobile()} />
         <div className={Style.Left}>
           <Link href="/">
             <Image className={Style.Logo} src={Logo} alt="Logo" />
           </Link>
           <ul className={Style.ListaLeft}>
             <li>
-              <a href="*">Todo</a>
+              <Link href="/" >Todo</Link>
             </li>
             <li>
-              <a href="*">Ropa</a>
+            <Link href="/clothes">Clothes</Link>
             </li>
             <li>
-              <a href="*">Electronicos</a>
+              <Link href="/electronics">Electronics</Link>
             </li>
             <li>
-              <a href="*">Muebles</a>
+              <Link href="/shoes">Shoes</Link>
             </li>
             <li>
-              <a href="*">Juguetes</a>
-            </li>
-            <li>
-              <a href="*">Otros</a>
+              <Link href="/others">Others</Link>
             </li>
           </ul>
         </div>
         <div className={Style.Right}>
           <ul>
             <li className={Style.Email} onClick={() => toggleMenu()}>
-              bryanmlg2018@gmail.com
+              Alejandro Maldonado
               <Image className={Style.SubMenu} src={SubFlecha} alt="Flechita" />
             </li>
             <li className={Style.Shopping} onClick={() => toggleOrder()}>
@@ -61,6 +60,7 @@ const Header = () => {
         </div>
         {state.menuIsOpen && <Menu />}
         {state.orderIsOpen && <MyOrder />}
+        {state.menuMobileIsOpen && <MenuMobile />}
       </nav>
     </header>
   );

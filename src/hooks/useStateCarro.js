@@ -4,6 +4,7 @@ const initialState = {
   cart: [],
   orderIsOpen: false,
   menuIsOpen: false,
+  menuMobileIsOpen: false,
 };
 
 const useInitialState = () => {
@@ -37,6 +38,13 @@ const useInitialState = () => {
     });
   };
 
-  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu };
+  const toggleMenuMobile = () => {
+    setState({
+      ...state,
+      menuMobileIsOpen: !state.menuMobileIsOpen,
+    });
+  };
+
+  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile };
 };
 export default useInitialState;

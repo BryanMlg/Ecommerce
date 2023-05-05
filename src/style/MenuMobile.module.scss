@@ -1,0 +1,70 @@
+@import "@style/Var.scss";
+
+.Mobile-Menu{
+    padding: 24px;
+    background-color: $--white;
+    position: absolute;
+    top: 68.5px;
+    left: 0;
+    width: 100%;
+}
+.Mobile-Menu .Categorias{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0px;
+    border-bottom: 1px solid $--very-light-pink;
+    padding-bottom: 15;
+}
+.Mobile-Menu .Categorias li{
+    margin-bottom: 24px;
+}
+.Mobile-Menu .Categorias li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: $--Md;
+}
+
+.Mobile-Menu .Menu-Cuenta{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.Mobile-Menu .Menu-Cuenta li{
+    margin: 24px 0 0;
+}
+
+.Mobile-Menu .Menu-Cuenta li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: $--Md;
+}
+
+
+.Mobile-Menu .User-Account{
+    list-style: none;
+    padding: 0;
+    padding-bottom: 24px;
+
+}
+.Mobile-Menu .User-Account li{
+    margin: 24px 0 0;
+    
+}
+.Mobile-Menu .User-Account li a{
+    text-decoration: none;
+    color: $--black;
+}
+.Mobile-Menu .User-Account li:last-child a{
+    color: $--hospital-green;
+}
+
+@media (min-width:718px) {
+    .Mobile-Menu {
+      display: none;
+    }
+  }

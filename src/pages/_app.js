@@ -1,4 +1,4 @@
-import '../style/global.scss';
+import '@style/global.scss';
 import ContextApp from '@context/ContextApp';
 import useInitialState from '@hooks/useStateCarro';
 import Header from '@components/Header';
