@@ -49,7 +49,7 @@ const Header = () => {
         <div className={Style.Right}>
           <ul>
             <li className={Style.Email} onClick={() => toggleMenu()}>
-              Alejandro Maldonado
+              Bryan Guerra
               <Image className={Style.SubMenu} src={SubFlecha} alt="Flechita" />
             </li>
             <li className={Style.Shopping} onClick={() => toggleOrder()}>
