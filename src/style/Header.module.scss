@@ -5,6 +5,12 @@
     margin-top: 18px;
 }
 
+.Navigation{
+   position: sticky;
+   top: 0;
+   backdrop-filter: blur(50px);
+}
+
 .Navigation nav {
     display: flex;
     border-bottom: 1px solid $--very-light-pink;

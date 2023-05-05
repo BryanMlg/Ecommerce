@@ -21,6 +21,7 @@ const Header = () => {
     toggleMenuMobile,
   } = useContext(ContextApp);
   return (
+    <>
     <header className={Style.Navigation}>
       <nav>
         <Image className={Style.Menu} src={MenuLogo} alt="Menu" onClick={() => toggleMenuMobile()} />
@@ -59,10 +60,11 @@ const Header = () => {
           </ul>
         </div>
         {state.menuIsOpen && <Menu />}
-        {state.orderIsOpen && <MyOrder />}
         {state.menuMobileIsOpen && <MenuMobile />}
       </nav>
     </header>
+    {state.orderIsOpen && <MyOrder />}
+    </>
   );
 };
 export default Header;
