@@ -28,6 +28,8 @@ const useInitialState = () => {
     setState({
       ...state,
       orderIsOpen: !state.orderIsOpen,
+      menuIsOpen: false,
+      menuMobileIsOpen: false,
     });
   };
 
@@ -35,6 +37,8 @@ const useInitialState = () => {
     setState({
       ...state,
       menuIsOpen: !state.menuIsOpen,
+      orderIsOpen: false,
+      menuMobileIsOpen: false,
     });
   };
 
@@ -42,6 +46,8 @@ const useInitialState = () => {
     setState({
       ...state,
       menuMobileIsOpen: !state.menuMobileIsOpen,
+      menuIsOpen: false,
+      orderIsOpen: false,
     });
   };
 

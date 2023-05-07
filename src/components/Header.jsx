@@ -31,7 +31,7 @@ const Header = () => {
           </Link>
           <ul className={Style.ListaLeft}>
             <li>
-              <Link href="/" >Todo</Link>
+              <Link href="/">Todo</Link>
             </li>
             <li>
             <Link href="/clothes">Clothes</Link>
@@ -54,7 +54,7 @@ const Header = () => {
               <Image className={Style.SubMenu} src={SubFlecha} alt="Flechita" />
             </li>
             <li className={Style.Shopping} onClick={() => toggleOrder()}>
-              <Image className={Style.Carrito} src={Carrito} alt="Carrito" />
+              <Image className={Style.Carrito} src={Carrito} alt="Carrito" width={100} />
               {cart.length > 0 && <div>{cart.length}</div>}
             </li>
           </ul>

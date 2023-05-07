@@ -9,7 +9,7 @@ import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
 import { Loading, Grid } from '@nextui-org/react';
 import { useState } from 'react';
 export default function ProductItem({ product }) {
-  const { state, addToCart } = useContext(ContextApp);
+  const { state, addToCart} = useContext(ContextApp);
 
   const HandleClick = (item) => {
     addToCart(item);
@@ -31,7 +31,7 @@ export default function ProductItem({ product }) {
             </Grid>
           </div>
         )}
-        <Image unoptimized={() => product.images[0]} src={product.images[0]} alt={product.title} width="240" height="240" onLoad={handleImageLoad} />
+        <Image priority={true} unoptimized={() => product.images[0]} src={product.images[0]} alt={product.title} width="240" height="240" onLoad={handleImageLoad} />
       </div>
       <div className={Style['product-info']}>
         <div>

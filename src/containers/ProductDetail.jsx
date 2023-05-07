@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductInfo from '@components/ProductInfo.jsx';
-import '@style/ProductDetail.scss';
+import Style from "@style/ProductDetail.module.scss";
 import Image from 'next/image';
 export default function ProductDetail() {
   return (
-    <aside className="ProductDetail">
-      <div className="ProductDetail-close">
+    <aside className={Style.ProductDetail}>
+      <div className={Style["ProductDetail-close"]}>
         <Image src="@assets/icon_close.png" alt="close" />
       </div>
       <ProductInfo />

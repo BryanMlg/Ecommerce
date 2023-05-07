@@ -13,6 +13,7 @@
 	border: 1px solid $--very-light-pink;
 	animation: swipedown 1s ease;
 	overflow-y: auto;
+	z-index: 1;
 }
 .title-container {
 	display: flex;

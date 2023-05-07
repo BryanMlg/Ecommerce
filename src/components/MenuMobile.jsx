@@ -1,23 +1,29 @@
 import Link from 'next/link';
 import Style from '@style/MenuMobile.module.scss';
+import { useContext } from 'react';
+import ContextApp from '@context/ContextApp';
 export default function MenuMobile() {
+  const {
+    state,
+    toggleMenuMobile,
+  } = useContext(ContextApp);
   return (
     <div className={Style['Mobile-Menu']}>
       <ul className={Style.Categorias}>
         <li>
-          <Link href="/">Todo</Link>
+          <Link href="/" onClick={() => toggleMenuMobile()}>Todo</Link>
         </li>
         <li>
-          <Link href="/clothes">Clothes</Link>
+          <Link href="/clothes" onClick={() => toggleMenuMobile()}>Clothes</Link>
         </li>
         <li>
-          <Link href="/electronics">Electronics</Link>
+          <Link href="/electronics" onClick={() => toggleMenuMobile()}>Electronics</Link>
         </li>
         <li>
-          <Link href="/shoes">Shoes</Link>
+          <Link href="/shoes" onClick={() => toggleMenuMobile()}>Shoes</Link>
         </li>
         <li>
-          <Link href="/others">Others</Link>
+          <Link href="/others" onClick={() => toggleMenuMobile()}>Others</Link>
         </li>
       </ul>
       <ul className={Style['Menu-Cuenta']}>
@@ -40,6 +46,7 @@ export default function MenuMobile() {
           </Link>
         </li>
       </ul>
+      {state.menuMobileIsOpen ?? <MenuMobile />}
     </div>
   );
 }
