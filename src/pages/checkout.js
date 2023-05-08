@@ -8,18 +8,22 @@ export default function Checkout() {
   const {
     state: { cart },
   } = useContext(ContextApp);
+
   const Total = () => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
     const Pago = cart.reduce(reducer, 0);
     return Pago;
   };
+
   const [currentDate, setCurrentDate] = useState(new Date());
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentDate(new Date());
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
+  
   return (
     <>
       <Head>

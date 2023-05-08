@@ -1,7 +1,11 @@
 import ProductItem from '@components/ProductItem.jsx';
 import Style from'@style/ProductList.module.scss';
 import {GetProducts, GetProductsCategory} from '@services/api/products.services.api';
-export default function ProductList  ({ categoryId }) {
+import { useContext } from 'react';
+import ContextApp from '@context/ContextApp';
+import ProductInfo from '@components/ProductInfo';
+export default function ProductList  ({ categoryId,}) {
+	const {state, } = useContext(ContextApp);
 	function VerificarCategoria(){
 		let products = null;
 		if(categoryId == 1){
@@ -27,10 +31,11 @@ export default function ProductList  ({ categoryId }) {
 	}
 	return (
 		<section className={Style["main-container"]}>
+			{ state.menuProductInfoIsOpen && <ProductInfo/>}
 			<div className={Style.ProductList}>
 				{VerificarCategoria().map((product) => {
 						if (product.images.length > 0 && product.images[0] !== null) {
-								return <ProductItem product = {product} key={product.id} />;
+								return <ProductItem product={product} key={product.id}/>;
 						}
 				})}
 		</div>

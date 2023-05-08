@@ -1,22 +1,30 @@
 @import "@style/Var.scss";
 
-/*.Product-Detail {
-    width: 360px;
-    padding-bottom: 24px;
-    position: absolute;
-    right: 0;
-  }*/
+.Product-Detail {
+    display: flex;
+    align-items: center;
+    min-width: 80%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    border: solid 1px $--very-light-pink;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: $--white;
+    height: 210px;
+  }
   
   aside .Product-Detail-Close {
     background: $--white;
     width: 10px;
     height: 10px;
-    position: absolute;
-    top: 24px;
-    left: 24px;
     z-index: 2;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 10px;
     border-radius: 50%;
+    border: solid 1px $--very-light-pink;
   }
 
   .Product-Detail-Close:hover {
@@ -30,8 +38,8 @@
   }
 
 aside .ProductImg{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 15%;
 }
@@ -46,7 +54,6 @@ aside .Dots span:nth-child(1){
 }
 
 aside .Dots .dot {
-    
     height: 10px;
     width: 10px;
     background-color: $--very-light-pink;
@@ -56,7 +63,8 @@ aside .Dots .dot {
     display: inline-flex
 }
 aside .Product-Info{
-    width: 300px;
+    width: 500x;
+    padding-right: 20px;
 }
 aside .Product-Info p:first-child{
 font-weight: bold;
@@ -78,11 +86,37 @@ aside .Product-Info .AddCart{
     border: none;
     border-radius: 10px;
     color: $--white;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    margin-top: 25px;
+    height: 35px;
+    width: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside .Product-Info .AddCart .IconAdd{
+  height: 30px;
+  width: 30px;
+}
+@media (max-width:718px) {
+  .Product-Detail {
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+  }
+  aside .Product-Info .AddCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside .Product-Info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+aside .Product-Detail-Close{
+  margin-right: 550px;
+  margin-top: 25px;
+}
 }

@@ -5,11 +5,12 @@ const initialState = {
   orderIsOpen: false,
   menuIsOpen: false,
   menuMobileIsOpen: false,
+  menuProductInfoIsOpen: false,
 };
 
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
-
+  const [ProductDescription, setProductDescription] = useState(null);
   const addToCart = (payload) => {
     setState({
       ...state,
@@ -30,6 +31,7 @@ const useInitialState = () => {
       orderIsOpen: !state.orderIsOpen,
       menuIsOpen: false,
       menuMobileIsOpen: false,
+      menuProductInfoIsOpen: false,
     });
   };
 
@@ -39,6 +41,7 @@ const useInitialState = () => {
       menuIsOpen: !state.menuIsOpen,
       orderIsOpen: false,
       menuMobileIsOpen: false,
+      menuProductInfoIsOpen: false,
     });
   };
 
@@ -48,9 +51,21 @@ const useInitialState = () => {
       menuMobileIsOpen: !state.menuMobileIsOpen,
       menuIsOpen: false,
       orderIsOpen: false,
+      menuProductInfoIsOpen: false,
     });
   };
 
-  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile };
+  const toggleMenuProductInfo = (product) => {
+    setProductDescription(product);
+    setState({
+      ...state,
+      menuProductInfoIsOpen: !state.menuProductInfoIsOpen,
+      orderIsOpen: false,
+      menuIsOpen: false,
+      menuMobileIsOpen: false,
+    });
+  };
+
+  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile, toggleMenuProductInfo, ProductDescription };
 };
 export default useInitialState;
