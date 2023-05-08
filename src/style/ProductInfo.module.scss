@@ -97,6 +97,7 @@ aside .Product-Info .AddCart .IconAdd{
   height: 30px;
   width: 30px;
 }
+
 @media (max-width:718px) {
   .Product-Detail {
     flex-direction: column;
@@ -116,7 +117,8 @@ aside .Product-Info{
   padding: 0;
 }
 aside .Product-Detail-Close{
-  margin-right: 550px;
-  margin-top: 25px;
+  position: absolute;
+  left: 0;
+  top: 10px;
 }
 }
