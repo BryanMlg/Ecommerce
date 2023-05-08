@@ -9,18 +9,31 @@ import { useContext } from 'react';
 import ContextApp from '@context/ContextApp';
 import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
 import { useState } from 'react';
+import { Loading, Grid } from '@nextui-org/react';
 export default function ProductInfo() {
   const { ProductDescription, state, addToCart, toggleMenuProductInfo } = useContext(ContextApp);
   const HandleClick = (product) => {
     addToCart(product);
   };
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   return (
     <aside className={Style['Product-Detail']}>
       <div className={Style['Product-Detail-Close']} onClick={() => toggleMenuProductInfo(null)} role="figure">
         <Image src={Close} alt="close" width={50} height={50} />
       </div>
+      {!imageLoaded && (
+          <div className={Style['loading-container']}>
+            <Grid>
+              <Loading color="success"></Loading>
+            </Grid>
+          </div>
+        )}
       <Image
         className={Style.ProductImg}
         priority={true}
@@ -29,6 +42,7 @@ export default function ProductInfo() {
         alt={ProductDescription.title}
         width="240"
         height="240"
+        onLoad={handleImageLoad} 
       />
       <div className={Style.Dots}>
         {ProductDescription.images.map((_, index) => (

@@ -14,7 +14,11 @@
     background-color: $--white;
     height: 210px;
   }
-  
+  .loading-container {
+    position: absolute;
+    top: 85px;
+    left: 135px;
+  }
   aside .Product-Detail-Close {
     background: $--white;
     width: 10px;
