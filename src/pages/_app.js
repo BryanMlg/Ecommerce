@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   const InitialState = useInitialState();
   return (
     <ContextApp.Provider value={InitialState}>
-      <Header />
+      <Header/>
       <Component {...pageProps} />
     </ContextApp.Provider>
   );

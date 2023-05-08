@@ -8,6 +8,8 @@ import Link from 'next/link';
 export default function MyOrder() {
   const {
     state: { cart },
+    toggleOrder,
+    state,
   } = useContext(ContextApp);
   const Total = () => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
@@ -30,10 +32,11 @@ export default function MyOrder() {
           </p>
           <p>${Total()}</p>
         </div>
-        <Link href="/checkout">
+        <Link href="/checkout" onClick={() => toggleOrder()}>
           <button className={Style['primary-button']}>Checkout</button>
         </Link>
       </div>
+      {state.orderIsOpen ?? <MyOrder />}
     </aside>
   );
 }

@@ -4,10 +4,10 @@ import {GetProducts, GetProductsCategory} from '@services/api/products.services.
 import { useContext } from 'react';
 import ContextApp from '@context/ContextApp';
 import ProductInfo from '@components/ProductInfo';
-export default function ProductList  ({ categoryId,}) {
+export default function ProductList  ({categoryId}) {
 	const {state, } = useContext(ContextApp);
 	function VerificarCategoria(){
-		let products = null;
+		let products = 0;
 		if(categoryId == 1){
 			products = GetProductsCategory(categoryId);
 			return products;

@@ -49,19 +49,23 @@ aside .Dots{
     text-align: center;
 }
 
-aside .Dots span:nth-child(1){
-   background-color: #000000;
-}
-
 aside .Dots .dot {
-    height: 10px;
-    width: 10px;
+    height: 25px;
+    width: 25px;
     background-color: $--very-light-pink;
     cursor: pointer;
     margin: 0 5px;
     border-radius: 50%;
     display: inline-flex
 }
+aside .Dots .dot.active {
+  background-color: $--hospital-green;
+}
+
+aside .Dots .dot:hover{
+  background-color: $--hospital-green;
+}
+
 aside .Product-Info{
     width: 500x;
     padding-right: 20px;
