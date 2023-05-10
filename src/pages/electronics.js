@@ -5,7 +5,6 @@ export default function electronics() {
 
   return (
     <>
-      <h1>Categoría {2}</h1>
       <ProductList categoryId={2} />
     </>
   );

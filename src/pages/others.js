@@ -5,7 +5,6 @@ export default function shoes() {
 
   return (
     <>
-      <h1>Categoría {5}</h1>
       <ProductList categoryId={5} />
     </>
   );
