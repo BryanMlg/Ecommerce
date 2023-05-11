@@ -44,6 +44,7 @@ export default function ProductInfo() {
         height="240"
         onLoad={handleImageLoad} 
       />
+      
       <div className={Style.Dots}>
         {ProductDescription.images.map((_, index) => (
           <span role="banner" key={index} className={`${Style.dot} ${currentImageIndex === index ? Style.active : ''}`} onClick={() => setCurrentImageIndex(index)}></span>

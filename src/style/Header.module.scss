@@ -54,7 +54,9 @@ header nav .Left ul li a:hover {
     border: 1px solid $--hospital-green;
     color: $--hospital-green;
 }
-
+header nav .Left ul li a.active{
+    border: 1px solid $--hospital-green;
+}
 header nav .Right .Email {
     color: $--very-light-pink;
     font-size: $--Md;

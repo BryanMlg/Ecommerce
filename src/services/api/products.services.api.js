@@ -10,7 +10,7 @@ const GetProducts = (PRODUCT_LIMIT, PRODUCT_OFFSET) => {
     (async () => {
       try {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        const response = await useMakeFetch(endPoints.products.getAllProducts, 'GET');
+        const response = await useMakeFetch(request, 'GET');
         const data = await response.json();
         setProducts(
           data.filter(item => {
@@ -21,7 +21,7 @@ const GetProducts = (PRODUCT_LIMIT, PRODUCT_OFFSET) => {
         alert(error);
       }
     })();
-  },[request]);
+  },[]);
 
   return products;
 };
@@ -43,7 +43,7 @@ const GetProductsCategory = (id) => {
         alert(error);
       }
     })();
-  },[id]);
+  },[]);
 
   return products;
 };

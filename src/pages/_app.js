@@ -1,6 +1,6 @@
 import '@style/global.scss';
 import ContextApp from '@context/ContextApp';
-import useInitialState from '@hooks/useStateCarro';
+import useInitialState from '@hooks/useStateCart';
 import Header from '@components/Header';
 function MyApp({ Component, pageProps }) {
   const InitialState = useInitialState();

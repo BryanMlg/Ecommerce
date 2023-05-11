@@ -31,7 +31,7 @@ const Header = () => {
           </Link>
           <ul className={Style.ListaLeft}>
             <li>
-              <Link href="/">Todo</Link>
+              <Link href="/">All</Link>
             </li>
             <li>
             <Link href="/clothes">Clothes</Link>

@@ -38,17 +38,27 @@
     font-weight: bold;
     margin-bottom: 16px;
 }
+
 .Main-Container .Container form .Input-Email{
     margin-bottom: 16px;
     border: none;
-    background-color: $--text-input-field;
-    border-radius: 10px;
+    border-bottom: 3px solid $--text-input-field;
     height: 24px;
     padding: 6px;
     margin-bottom: 16px;
     font-size: var($--Sm);
+    outline: none;
+}
+.Main-Container .Container:hover{
+    content: '';
+    border: 2px solid $--hospital-green;
+    transition: all 0.5s ease-in;
 }
 
+.Main-Container .Container form .Input-Email:focus{
+    border-bottom: 2px solid $--hospital-green;
+    transition: all 0.5s ease-in;
+}
 .Main-Container .Container form .primary-button{
     background-color: $--hospital-green;
     height: 32px;
@@ -67,6 +77,11 @@
     height: 32px;
     cursor: pointer;
     margin-top: 20px;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .Main-Container #BotonB:hover{
     background-color: $--hospital-green;

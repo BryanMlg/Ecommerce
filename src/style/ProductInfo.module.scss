@@ -3,6 +3,7 @@
 .Product-Detail {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-width: 80%;
     position: fixed;
     top: 60px;
@@ -51,6 +52,7 @@ aside .ProductImg{
 aside .Dots{
     width: 300px;
     text-align: center;
+    margin-top: 10px;
 }
 
 aside .Dots .dot {
@@ -71,7 +73,7 @@ aside .Dots .dot:hover{
 }
 
 aside .Product-Info{
-    width: 500x;
+    width: 500px;
     padding-right: 20px;
 }
 aside .Product-Info p:first-child{

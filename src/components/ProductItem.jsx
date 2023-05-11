@@ -6,7 +6,7 @@ import ContextApp from '@context/ContextApp';
 import Style from '@style/ProductItem.module.scss';
 import Image from 'next/image';
 import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
-import { Loading, Grid } from '@nextui-org/react';
+import { Loading, Grid} from '@nextui-org/react';
 import { useState } from 'react';
 export default function ProductItem({ product }) {
   const { state, addToCart, toggleMenuProductInfo} = useContext(ContextApp);
@@ -24,6 +24,7 @@ export default function ProductItem({ product }) {
   return (
     <div className={Style.ProductItem}>
       <div className={Style['image-container']}>
+        <div className={Style.CategoryName}>{product.category.name}</div>
         {!imageLoaded && (
           <div className={Style['loading-container']}>
             <Grid>
