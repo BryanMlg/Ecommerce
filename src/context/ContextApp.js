@@ -1,5 +1,6 @@
-import React from 'react';
+import {createContext} from 'react';
 
-const ContextApp = React.createContext({});
+const ContextApp = createContext();
+const authContext = createContext();
 
-export default ContextApp;
+export {ContextApp, authContext};

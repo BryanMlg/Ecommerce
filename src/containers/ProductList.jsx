@@ -2,7 +2,7 @@ import ProductItem from '@components/ProductItem.jsx';
 import Style from '@style/ProductList.module.scss';
 import { GetProducts, GetProductsCategory } from '@services/api/products.services.api';
 import { useContext, useState, useEffect } from 'react';
-import ContextApp from '@context/ContextApp';
+import {ContextApp} from '@context/ContextApp';
 import ProductInfo from '@components/ProductInfo';
 export default function ProductList({ categoryId }) {
   const { state } = useContext(ContextApp);
@@ -36,8 +36,7 @@ export default function ProductList({ categoryId }) {
     } else {
       products = GetProducts();
     }
-    const productsToShow = products.slice(0, numProductsToShow);
-    return productsToShow;
+    return products.slice(0, numProductsToShow);;
   }
 
   return (
@@ -48,6 +47,7 @@ export default function ProductList({ categoryId }) {
           if (product.images.length > 0 && product.images[0] !== null) {
             return <ProductItem product={product} key={product.id} />;
           }
+          return null;
         })}
       </div>
     </section>

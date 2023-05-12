@@ -2,19 +2,19 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import SvgCarrito from '@assets/bt_add_to_cart.svg';
-import ContextApp from '@context/ContextApp';
+import {ContextApp} from '@context/ContextApp';
 import Style from '@style/ProductItem.module.scss';
 import Image from 'next/image';
 import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
-import { Loading, Grid} from '@nextui-org/react';
+import { Loading, Grid } from '@nextui-org/react';
 import { useState } from 'react';
 export default function ProductItem({ product }) {
-  const { state, addToCart, toggleMenuProductInfo} = useContext(ContextApp);
-  
+  const { state, addToCart, toggleMenuProductInfo } = useContext(ContextApp);
+
   const HandleClick = (product) => {
     addToCart(product);
   };
-  
+
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
@@ -32,7 +32,16 @@ export default function ProductItem({ product }) {
             </Grid>
           </div>
         )}
-        <Image priority={true} unoptimized={() => product.images[0]} src={product.images[0]} alt={product.title} width="240" height="240" onLoad={handleImageLoad} onClick={()=>toggleMenuProductInfo(product)} />
+        <Image
+          priority={true}
+          unoptimized={() => product.images[0]}
+          src={product.images[0]}
+          alt={product.title}
+          width="240"
+          height="240"
+          onLoad={handleImageLoad}
+          onClick={() => toggleMenuProductInfo(product)}
+        />
       </div>
       <div className={Style['product-info']}>
         <div>

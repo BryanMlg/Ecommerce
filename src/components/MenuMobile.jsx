@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Style from '@style/MenuMobile.module.scss';
 import { useContext } from 'react';
-import ContextApp from '@context/ContextApp';
+import {ContextApp} from '@context/ContextApp';
 export default function MenuMobile() {
   const {
     state,

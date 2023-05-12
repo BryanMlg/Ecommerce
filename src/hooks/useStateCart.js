@@ -11,6 +11,7 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const [ProductDescription, setProductDescription] = useState(null);
+  
   const addToCart = (payload) => {
     setState({
       ...state,

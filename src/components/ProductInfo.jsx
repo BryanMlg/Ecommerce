@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Close from '@assets/icon_close.png';
 import AddToCart from '@assets/bt_add_to_cart.svg';
 import { useContext } from 'react';
-import ContextApp from '@context/ContextApp';
+import {ContextApp} from '@context/ContextApp';
 import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
 import { useState } from 'react';
 import { Loading, Grid } from '@nextui-org/react';

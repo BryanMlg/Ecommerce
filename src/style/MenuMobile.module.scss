@@ -3,10 +3,9 @@
 .Mobile-Menu {
   padding: 24px;
   background-color: $--white;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
+  position: sticky;
+  top: 61px;
+  z-index: 1;
 }
 .Mobile-Menu .Categorias {
   list-style: none;

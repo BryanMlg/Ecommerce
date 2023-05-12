@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import OrderItem from '@components/OrderItem.jsx';
 import Flechita from '@assets/flechita.svg';
-import ContextApp from '@context/ContextApp.js';
+import {ContextApp} from '@context/ContextApp.js';
 import Style from '@style/MyOrder.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
