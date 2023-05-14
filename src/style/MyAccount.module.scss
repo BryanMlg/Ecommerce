@@ -1,0 +1,62 @@
+@import "@style/Var.scss";
+
+.MyAccount {
+	display: grid;
+	place-items: center;
+	margin-top: 6%;
+}
+.MyAccount-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 1px solid $--very-light-pink;
+	width: 300px;
+	border-radius: 8px;
+	padding-bottom: 10px;
+}
+.UserImage{
+    border-radius: 50%;
+	margin-bottom: 20px;
+}
+.logo {
+	width: 150px;
+	margin-bottom: 48px;
+	justify-self: center;
+	display: none;
+}
+.title {
+	font-size: $--Lg;
+	text-align: start;
+}
+
+.label {
+	font-size: $--Sm;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+.value {
+	color: $--very-light-pink;
+	font-size: $--Md;
+	margin: 8px 0 32px 0;
+}
+.secondary-button {
+	background-color: $--white;
+	border-radius: 8px;
+	border: 1px solid $--hospital-green;
+	color: $--hospital-green;
+	width: 50%;
+	cursor: pointer;
+	font-size: $--Md;
+	font-weight: bold;
+	height: 30px;
+}
+@media (max-width: 640px) {
+	.form-container {
+		height: 100%;
+	}
+	.form {
+		height: 100%;
+		justify-content: space-between;
+	}
+}

@@ -1,14 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useContext } from "react";
 import Style from "@style/Login.module.scss";
 import Logo from "@assets/logo_yard_sale.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
+import Alert from "@components/Alert";
 import { authContext } from "@context/ContextApp";
-import { useContext } from "react";
 export default function Login ()  {
   const form = useRef(null);
   const auth = useContext(authContext);
+  const [Error, setError] = useState(false);
 	const HandleSubmit = (event) => {
 		event.preventDefault();
 		const formData = new FormData(form.current);
@@ -16,9 +17,14 @@ export default function Login ()  {
 			username: formData.get('email'),
 			password: formData.get('password')
 		};
-		auth.signIn(data.username, data.password).then(() => {
-      Router.push('/dashboard');
-    });
+		auth.signIn(data.username, data.password)
+      .then(() => {
+        setError(false);
+        Router.push('/dashboard');
+      })
+      .catch(() => {
+        setError(true);
+      });
 	};
   return (
     <div className={Style["Main-Container"]}>
@@ -48,6 +54,7 @@ export default function Login ()  {
           Register
         </Link>
       </div>
+      {Error && <Alert Message={"Invalid email or password"} isErrorLogin={true}/>}
     </div>
   );
 };

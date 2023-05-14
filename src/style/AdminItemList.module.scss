@@ -1,0 +1,15 @@
+@import "@style/Var.scss";
+
+.ProductList {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 500px);
+	gap: 10px;
+	place-content: center;
+}
+
+@media (max-width: 718px) {
+	.ProductList {
+		grid-template-columns: repeat(auto-fill, auto);
+        max-width: 600px;
+	}
+}

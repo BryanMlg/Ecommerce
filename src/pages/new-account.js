@@ -1,6 +1,7 @@
+import CreateAccount from "@components/CreateAccount";
 export default function Login ()  {
     return (
-      <div>Create Account</div>
+      <CreateAccount/>
     );
   };
   

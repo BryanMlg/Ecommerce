@@ -19,7 +19,7 @@ const useProviderAuth = () => {
           const user = await profileResponse.json();
           setUser(user);
         } catch (error) {
-          console.error(error);
+          throw new Error(error);
         }
       })();
     }
@@ -42,7 +42,7 @@ const useProviderAuth = () => {
         setUser(user);
       }
     } catch (error) {
-      console.error(error);
+      throw new Error(error);
     }
   };
 

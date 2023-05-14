@@ -30,8 +30,8 @@
     "lint": "next lint",
     "lint:fix": "eslint src/ --fix"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["ecommerce", "shop"],
+  "author": "Bryan Guerra",
   "license": "MIT",
-  "description": ""
+  "description": "Ecommerce online shop"
 }

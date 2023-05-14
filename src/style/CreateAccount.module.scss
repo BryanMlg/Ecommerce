@@ -1,19 +1,23 @@
-@use "@style/Var.scss";
+@import "@style/Var.scss";
 
 .Main-Container{
     width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 .Main-Container .Container{
     display: grid;
     grid-template-columns: auto;
     width: 300px;
+    border: 1px solid $--text-input-field;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .Main-Container .Container .Titulo{
-    font-size: var(--Lg);
+    font-size: $--Lg;
     margin-bottom: 24px;
     text-align: center;
 }
@@ -26,23 +30,24 @@
 
 
 .Main-Container .Container form .FormLabel{
-    font-size: var(--Sm);
+    font-size: $--Sm;
     font-weight: bold;
     margin-bottom: 16px;
 }
 .Main-Container .Container form .Datos{
     margin-bottom: 16px;
     border: none;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
     border-radius: 10px;
     height: 24px;
     padding: 6px;
     margin-bottom: 16px;
-    font-size: var(--Sm);
+    font-size: $--Sm;
+    outline: none;
 }
 
-.Main-Container .Container form #BotonC{
-    background-color: var(--hospital-green);
+.Main-Container .Container .primary-button{
+    background-color: $--hospital-green;
     height: 32px;
     cursor: pointer;
     border: none;

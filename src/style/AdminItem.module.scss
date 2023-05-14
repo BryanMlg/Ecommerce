@@ -1,0 +1,59 @@
+@import '@style/Var.scss';
+
+.MyOrderContent{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Shopping{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    border: 1px solid $--very-light-pink;
+    border-radius: 10px;
+  }
+
+.Shopping p:first-child{
+    margin-left: 35px;
+}
+
+.Shopping figure{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+
+ .Shopping img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.Shopping .Edit-Img, .Shopping .Delete-Img{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.Shopping .Edit-Img{
+    margin-left: 15px;
+}
+
+ .Shopping p:nth-child(2){
+    color: $--very-light-pink;
+}
+ .Shopping p:nth-child(3){
+    font-size: $--Md;
+    font-weight: bold;
+}
+
+@media (max-width: 718px) {
+    .Shopping .Edit-Img{
+        margin-left: 15px;
+    }
+}

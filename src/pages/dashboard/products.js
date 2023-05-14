@@ -1,6 +1,7 @@
+import AdminItemsList from "@containers/AdminItemsList";
 export default function products ()  {
     return (
-      <div>Productos Dashboard</div>
+      <AdminItemsList/>
     );
   };
   

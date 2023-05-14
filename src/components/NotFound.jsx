@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className={Style.container}>
       <h1>Oops!!</h1>
       <h2>404 - Page not found</h2>
-      <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+      <p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
       <Link href="/">Go To Homepage</Link>
     </div>
   );
