@@ -99,7 +99,19 @@
     width: 140px;
     height: 140px;
   }
-  .CategoryName{
-    height: 123px;
+  .CategoryName {
+    writing-mode: horizontal-tb;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: $--hospital-green;
+    border-radius: 5px;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+    padding: 8px 8px 10px 5px;
+    opacity: 70%;
+    height: 10px;
+    text-align: center;
+    width: 127px;
   }
 }

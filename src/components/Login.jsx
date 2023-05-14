@@ -20,7 +20,7 @@ export default function Login ()  {
 		auth.signIn(data.username, data.password)
       .then(() => {
         setError(false);
-        Router.push('/dashboard');
+        Router.push('/');
       })
       .catch(() => {
         setError(true);

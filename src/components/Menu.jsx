@@ -1,10 +1,31 @@
 import Style from '@style/Menu.module.scss';
 import Link from 'next/link';
+import { ContextApp } from '@context/ContextApp';
+import { useContext } from 'react';
+
 export default function Menu({ auth }) {
-  function handleLogout (){
+  const { toggleMenu } = useContext(ContextApp);
+  function handleLogout() {
     auth.signOut();
+    toggleMenu();
   }
   if (auth?.user?.role === 'admin') {
+    return (
+      <div className={Style['desktop-menu']}>
+        <ul>
+          <li>
+            <Link href="/myaccount">My account</Link>
+          </li>
+          <li>
+            <Link onClick={handleLogout} href="/login">
+              Logout
+            </Link>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+  if (auth?.user) {
     return (
       <div className={Style['desktop-menu']}>
         <ul>
@@ -24,15 +45,10 @@ export default function Menu({ auth }) {
       <div className={Style['desktop-menu']}>
         <ul>
           <li>
-            <Link href="*" className={Style.title}>
-              My orders
-            </Link>
-          </li>
-          <li>
             <Link href="/myaccount">My account</Link>
           </li>
           <li>
-            <Link href="/login">Signin</Link>
+            <Link href="/login">Sign in</Link>
           </li>
         </ul>
       </div>
