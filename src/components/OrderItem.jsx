@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import CloseIcon from '@assets/icon_close.png';
-import {ContextApp} from '@context/ContextApp.js';
+import { ContextApp } from '@context/ContextApp.js';
 import Style from '@style/OrderItem.module.scss';
 import Image from 'next/image';
 export default function OrderItem({ product }) {

@@ -37,10 +37,16 @@ const Header = () => {
               </Link>
               <ul className={Style.ListaLeft}>
                 <li>
+                  <Link href="/dashboard">Dashboard</Link>
+                </li>
+                <li>
                   <Link href="/dashboard/products">Products</Link>
                 </li>
                 <li>
-                  <Link href="/dashboard">Dashboard</Link>
+                  <Link href="/dashboard/users">Users</Link>
+                </li>
+                <li>
+                  <Link href="/dashboard/categories">Categories</Link>
                 </li>
               </ul>
             </div>
@@ -62,7 +68,7 @@ const Header = () => {
       </>
     );
   }
-  if (auth?.user?.role === 'customer'){
+  if (auth?.user?.role === 'customer') {
     return (
       <>
         <header className={Style.Navigation}>

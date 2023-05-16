@@ -23,6 +23,14 @@ const endPoints = {
   files: {
     addImage: `${API}/api/${VERSION}/files/upload/`,
   },
+  users:{
+    getUsers: `${API}/api/${VERSION}/users`,
+    addUser: `${API}/api/${VERSION}/users`,
+    updateUser: (id) => `${API}/api/${VERSION}/users/${id}`,
+    deleteUser: (id) => `${API}/api/${VERSION}/users/${id}`,
+    userIsAvailable: `${API}/api/${VERSION}/users/is-available`,
+  },
+  
 };
 
 export default endPoints;
