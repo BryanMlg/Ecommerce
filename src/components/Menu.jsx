@@ -30,25 +30,15 @@ export default function Menu({ auth }) {
       <div className={Style['desktop-menu']}>
         <ul>
           <li>
+            <Link href="/">My Orders</Link>
+          </li>
+          <li>
             <Link href="/myaccount">My account</Link>
           </li>
           <li>
             <Link onClick={handleLogout} href="/login">
               Logout
             </Link>
-          </li>
-        </ul>
-      </div>
-    );
-  } else {
-    return (
-      <div className={Style['desktop-menu']}>
-        <ul>
-          <li>
-            <Link href="/myaccount">My account</Link>
-          </li>
-          <li>
-            <Link href="/login">Sign in</Link>
           </li>
         </ul>
       </div>

@@ -18,4 +18,14 @@ const GetCategories = () =>{
     return users;
 };
 
-export default GetCategories;
+const deleteCategory = async (id) => {
+    try {
+        const response = await useMakeFetch(endPoints.categories.deleteCategory(id), 'DELETE');
+        const data = await response.json();
+        return data;
+    } catch (error){
+      throw new Error('Error deleting product' + error);
+    }
+  };
+
+export {GetCategories, deleteCategory};

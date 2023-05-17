@@ -1,10 +1,11 @@
 @import '@style/Var.scss';
-
+//Errors
 .container{
     background-color: $--Warning;
     border-radius: 8px;
     width:300px;
 }
+
 .container .alertContainer{
     display: flex;
     justify-content: center;
@@ -17,3 +18,26 @@
     border-radius: 8px;
     cursor: pointer;
 }
+//Success
+.Container{
+    background-color: $--Success;
+    border-radius: 8px;
+    width:300px;
+    position: sticky;
+    top: 61px;
+    left: 40%;
+}
+
+.Container .AlertContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container .AlertContainer .Close{
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.178);
+    border-radius: 8px;
+    cursor: pointer;
+}
+

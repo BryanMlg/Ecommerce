@@ -2,20 +2,31 @@
 import useMakeFetch from '@hooks/useMakeFetch';
 import endPoints from '@services/api';
 import { useState, useEffect } from 'react';
-const GetUsers = () =>{
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        (async () =>{
-            try {
-                const response = await useMakeFetch(endPoints.users.getUsers, 'GET');
-                const data = await response.json();
-                setUsers(data);
-            } catch (error) {
-                alert(error);
-            }
-        })();
-    },[]);
-    return users;
+
+const GetUsers = (ALERT) => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await useMakeFetch(endPoints.users.getUsers, 'GET');
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        alert(error);
+      }
+    })();
+  }, [ALERT]);
+  return users;
 };
 
-export default GetUsers;
+const deleteUser = async (id) => {
+  try {
+    const response = await useMakeFetch(endPoints.users.deleteUser(id), 'DELETE');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Error deleting product' + error);
+  }
+};
+
+export { GetUsers, deleteUser };

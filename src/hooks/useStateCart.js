@@ -6,12 +6,13 @@ const initialState = {
   menuIsOpen: false,
   menuMobileIsOpen: false,
   menuProductInfoIsOpen: false,
+  alertNotification: false,
 };
 
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const [ProductDescription, setProductDescription] = useState(null);
-  
+
   const addToCart = (payload) => {
     setState({
       ...state,
@@ -67,6 +68,13 @@ const useInitialState = () => {
     });
   };
 
-  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile, toggleMenuProductInfo, ProductDescription };
+  const toggleAlertNotification = () => {
+    setState({
+      ...state,
+      alertNotification: !state.alertNotification,
+    });
+  };
+
+  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile, toggleMenuProductInfo, ProductDescription, toggleAlertNotification };
 };
 export default useInitialState;

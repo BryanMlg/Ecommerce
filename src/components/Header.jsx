@@ -14,7 +14,6 @@ import Style from '@style/Header.module.scss';
 import MenuMobile from '@components/MenuMobile.jsx';
 import { authContext } from '@context/ContextApp';
 import Link from 'next/link';
-
 const Header = () => {
   const {
     state: { cart },
