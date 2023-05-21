@@ -5,6 +5,7 @@ import EditIcon from '@assets/EditIcon.svg';
 import { deleteProduct } from '@services/api/products.services.api';
 import { useContext } from 'react';
 import { ContextApp } from '@context/ContextApp';
+import Link from 'next/link';
 export default function AdminItem({ product }) {
   const {toggleAlertNotification} = useContext(ContextApp);
   const handleDelete = (id) => {
@@ -23,7 +24,9 @@ export default function AdminItem({ product }) {
           <p>{`$${product.price}`}</p>
           <figure>
             <Image src={DeleteIcon} alt="Close" className={Style['Delete-Img']} width="0" height="0" onClick={() => handleDelete(product?.id)} />
+            <Link href={`/dashboard/edit/${product.id}`}>
             <Image src={EditIcon} alt="Close" className={Style['Edit-Img']} width="0" height="0" />
+            </Link>
           </figure>
         </div>
       </div>

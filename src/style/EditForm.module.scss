@@ -1,0 +1,141 @@
+@import '@style/Var.scss';
+
+.FormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.FormContainer .Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid $--very-light-pink;
+  width: 400px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.FormContainer .Container:hover {
+  border: 2px solid $--hospital-green;
+}
+
+.FormContainer .Container label {
+  margin-top: 10px;
+}
+.FormContainer .Container span{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.ContainerTitlePrice {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContainerTitlePrice .Input {
+  border: none;
+  border-bottom: 2px solid $--text-input-field;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  outline: none;
+  height: 20px;
+  text-align: center;
+  background-color: $--text-input-field;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.Container .Categorys {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.Container .TextDescription {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.Container .Categorys select {
+  outline: none;
+  width: 150px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid $--text-input-field;
+}
+
+.Container .Categorys select:focus {
+  border-bottom: 2px solid $--hospital-green;
+}
+
+.Container .Categorys select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+.Label {
+  margin-bottom: 10px;
+}
+
+.Container .TextDescription textarea {
+  border: none;
+  border: 2px solid $--text-input-field;
+  outline: none;
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
+
+.Container .TextDescription textarea:focus {
+  border: 2px solid $--hospital-green;
+}
+
+.Container .ImageContainer {
+  text-align: center;
+}
+
+.Container .ImageContainer {
+  background-color: $--hospital-green;
+  border-radius: 10px;
+  width: 200px;
+  cursor: pointer;
+  height: 20px;
+}
+
+.Container .ImageContainer input {
+  outline: none;
+  visibility: hidden;
+  display: flex;
+  text-align: center;
+}
+
+.ContainerTitlePrice .Input:focus {
+  border-bottom: 2px solid $--hospital-green;
+}
+
+.buttonContainer {
+  margin-top: 10px;
+}
+
+.buttonContainer button {
+  width: 150px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  background-color: $--text-input-field;
+}
+
+.buttonContainer button:hover {
+  background-color: $--hospital-green;
+}

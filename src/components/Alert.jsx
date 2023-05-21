@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Style from '@style/Alert.module.scss';
 import CloseIcon from '@assets/CloseIcon.svg';
 import Image from 'next/image';
-import { useContext } from 'react';
 import { ContextApp } from '@context/ContextApp';
+
 export default function Alert({ Message, isErrorLogin }) {
   const { state, toggleAlertNotification } = useContext(ContextApp);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setVisible(false);
+      toggleAlertNotification();
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [toggleAlertNotification]);
+
+  if (!visible) {
+    return null; // Render nothing if not visible
+  }
+
   if (isErrorLogin) {
     return (
       <aside className={Style.container}>
         <div className={Style.alertContainer}>
           <p>{Message}</p>
         </div>
-        {state.menuProductInfoIsOpen ?? <Alert />}
+        {state.alertNotification ?? <Alert />}
       </aside>
     );
   } else {
@@ -22,7 +36,7 @@ export default function Alert({ Message, isErrorLogin }) {
           <Image className={Style.Close} src={CloseIcon} width={20} height={20} alt="Close" onClick={() => toggleAlertNotification()} />
           <p>{Message}</p>
         </div>
-        {state.menuProductInfoIsOpen ?? <Alert />}
+        {state.alertNotification ?? <Alert />}
       </aside>
     );
   }
