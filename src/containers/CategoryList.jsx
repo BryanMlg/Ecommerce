@@ -9,8 +9,8 @@ import Alert from '@components/Alert';
 export default function AdminItemsList() {
   const {state, toggleAlertNotification} = useContext(ContextApp);
   function getCategoriesToShow() {
-    const users = GetCategories(toggleAlertNotification);
-    return users.slice(0, useScroll());
+    const categories = GetCategories(toggleAlertNotification);
+    return categories.slice(0, useScroll());
   }
   return (
     <section className={Style['main-container']}>

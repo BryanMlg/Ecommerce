@@ -29,4 +29,14 @@ const deleteUser = async (id) => {
   }
 };
 
-export { GetUsers, deleteUser };
+const userIsAvailable = async (email) => {
+  try {
+    const response = await useMakeFetch(endPoints.users.userIsAvailable(), 'POST', {email});
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Error deleting product' + error);
+  }
+};
+
+export { GetUsers, deleteUser, userIsAvailable };

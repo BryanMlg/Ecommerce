@@ -1,5 +1,5 @@
 import CreateAccount from "@components/CreateAccount";
-export default function Login ()  {
+export default function newaccount ()  {
     return (
       <CreateAccount/>
     );

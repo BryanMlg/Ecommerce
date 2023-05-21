@@ -1,24 +1,22 @@
 @import "@style/Var.scss";
 
 .Main-Container{
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 20px;
 }
 .Main-Container .Container{
     display: grid;
     grid-template-columns: auto;
-    width: 300px;
-    border: 1px solid $--text-input-field;
+    width: 300px;   
+    border: 4px solid $--text-input-field;
     padding: 15px;
     border-radius: 8px;
 }
 
 .Main-Container .Container .Titulo{
     font-size: $--Lg;
-    margin-bottom: 24px;
     text-align: center;
 }
 
@@ -26,14 +24,29 @@
 .Main-Container .Container form{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 
 .Main-Container .Container form .FormLabel{
     font-size: $--Sm;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
 }
+
+.Main-Container .Container form .UserAvatarUpload{
+    font-size: $--Sm;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $--hospital-green;
+    width: 100%;
+    height: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .Main-Container .Container form .Datos{
     margin-bottom: 16px;
     border: none;
@@ -46,6 +59,34 @@
     outline: none;
 }
 
+.Main-Container .Container form .DatosInput{
+    margin-bottom: 16px;
+    border: none;
+    background-color: $--text-input-field;
+    border-radius: 10px;
+    height: 24px;
+    padding: 6px;
+    margin-bottom: 16px;
+    font-size: $--Sm;
+    outline: none;
+    visibility: hidden;
+    margin-bottom: 30px;
+}
+
+.Main-Container .Container form .Error{
+    text-align: center;
+    margin-top: 10px;
+    color: $--Warning;
+}
+
+.Main-Container .Container form .ImageAvatar{
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 66px;
+    right: 130px;
+}
+
 .Main-Container .Container .primary-button{
     background-color: $--hospital-green;
     height: 32px;
@@ -53,5 +94,5 @@
     border: none;
     border-radius: 10px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-bottom: 25px;
 } 

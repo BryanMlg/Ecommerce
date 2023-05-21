@@ -14,15 +14,15 @@ export default function Dashboard() {
   const users = GetUsers();
   const usersRole = users?.map((user) => user.role);
   const userRoleCount = usersRole?.map((role) => role);
-  
+
   const countOccurrences = (arr) => arr.reduce((prev, curr) => ((prev[curr] = ++prev[curr] || 1), prev), {});
 
   const dataProducts = {
     datasets: [
       {
-        label: 'Category',
+        label: 'Products',
         data: countOccurrences(categoryCount),
-        borderWidth: 2,
+        borderWidth: 5,
         backgroundColor: ['#ffbb11', '#c0c0c0', '#50AF95', 'f3ba2f', '#2a71d0'],
       },
     ],
@@ -31,9 +31,9 @@ export default function Dashboard() {
   const dataUsers = {
     datasets: [
       {
-        label: 'Category',
+        label: 'Users',
         data: countOccurrences(userRoleCount),
-        borderWidth: 2,
+        borderWidth: 5,
         backgroundColor: ['#ffbb11', '#c0c0c0', '#50AF95', 'f3ba2f', '#2a71d0'],
       },
     ],

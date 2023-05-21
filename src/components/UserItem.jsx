@@ -16,7 +16,7 @@ export default function UserItem({ user }) {
       <div className={Style.Shopping}>
         <p>{`ID:${user.id}`}</p>
         <figure>
-          <Image priority={true} unoptimized={() => user.avatar} src={user.avatar} alt={user.title} width="240" height="240" />
+          <Image priority={true} unoptimized={() => user.avatar} src={user.avatar} alt={user.name} width="240" height="240" />
         </figure>
         <p>{user.name}</p>
         <p>{user.role}</p>

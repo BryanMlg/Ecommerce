@@ -51,10 +51,23 @@ const useProviderAuth = () => {
     setUser(null);
   };
 
+  const signUp = async (email, name, password, avatar) => {
+    try {
+      const response = await useMakeFetch(endPoints.users.addUser, 'POST', { email, name, password, role: 'customer', avatar });
+      if (!response.ok) {
+        throw new Error('Failed to sign up');
+      }
+      await signIn(email, password);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   return {
     user,
     signIn,
     signOut,
+    signUp,
   };
 };
 

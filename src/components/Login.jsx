@@ -9,7 +9,7 @@ import { authContext } from "@context/ContextApp";
 export default function Login ()  {
   const form = useRef(null);
   const auth = useContext(authContext);
-  const [Error, setError] = useState(false);
+  const [Error, setError] = useState('');
 	const HandleSubmit = (event) => {
 		event.preventDefault();
 		const formData = new FormData(form.current);
@@ -19,11 +19,11 @@ export default function Login ()  {
 		};
 		auth.signIn(data.username, data.password)
       .then(() => {
-        setError(false);
+        setError(null);
         Router.push('/');
       })
       .catch(() => {
-        setError(true);
+        setError('Invalid email or password');
       });
 	};
   return (
@@ -54,7 +54,7 @@ export default function Login ()  {
           Register
         </Link>
       </div>
-      {Error && <Alert Message={"Invalid email or password"} isErrorLogin={true}/>}
+      {Error && <Alert Message={Error} isErrorLogin={true}/>}
     </div>
   );
 };
