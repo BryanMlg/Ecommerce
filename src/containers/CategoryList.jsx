@@ -9,7 +9,7 @@ import Alert from '@components/Alert';
 export default function AdminItemsList() {
   const {state, toggleAlertNotification} = useContext(ContextApp);
   function getCategoriesToShow() {
-    const categories = GetCategories(toggleAlertNotification);
+    const categories = GetCategories(()=>toggleAlertNotification());
     return categories.slice(0, useScroll());
   }
   return (

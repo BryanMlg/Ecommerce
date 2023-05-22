@@ -9,12 +9,12 @@ import Alert from '@components/Alert';
 export default function AdminItemsList() {
   const { state, toggleAlertNotification } = useContext(ContextApp);
   function getUsersToShow() {
-    const users = GetUsers(toggleAlertNotification);
+    const users = GetUsers(() => toggleAlertNotification());
     return users.slice(0, useScroll());
   }
   return (
     <section className={Style['main-container']}>
-      {state.alertNotification && <Alert Message={'Se elimino el producto'} isErrorLogin={false} />}
+      {state.alertNotification && <Alert Message={'Se elimino el usuario'} isErrorLogin={false} />}
       <div className={Style.ProductList}>
         {getUsersToShow().map((user) => {
           if (user.avatar !== null) {

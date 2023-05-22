@@ -9,15 +9,22 @@ export default function Alert({ Message, isErrorLogin }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setVisible(false);
-      toggleAlertNotification();
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, [toggleAlertNotification]);
+    if (visible) {
+      const timer = setTimeout(() => {
+        setVisible(false);
+        toggleAlertNotification(); // Ocultar la notificación en el estado
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta antes de que expire el tiempo
+      };
+    }
+    setVisible(true);
+    toggleAlertNotification();
+  }, [visible, toggleAlertNotification]);
 
   if (!visible) {
-    return null; // Render nothing if not visible
+    return null; // Si el componente ya no es visible, no se renderiza nada
   }
 
   if (isErrorLogin) {
@@ -26,7 +33,7 @@ export default function Alert({ Message, isErrorLogin }) {
         <div className={Style.alertContainer}>
           <p>{Message}</p>
         </div>
-        {state.alertNotification ?? <Alert />}
+        {state.menuProductInfoIsOpen ?? <Alert />}
       </aside>
     );
   } else {
@@ -36,7 +43,7 @@ export default function Alert({ Message, isErrorLogin }) {
           <Image className={Style.Close} src={CloseIcon} width={20} height={20} alt="Close" onClick={() => toggleAlertNotification()} />
           <p>{Message}</p>
         </div>
-        {state.alertNotification ?? <Alert />}
+        {state.menuProductInfoIsOpen ?? <Alert />}
       </aside>
     );
   }

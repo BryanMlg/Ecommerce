@@ -11,7 +11,7 @@ const GetCategories = (Alert) => {
         const data = await response.json();
         setUsers(data);
       } catch (error) {
-        alert(error);
+        throw new Error('Error' + error);
       }
     })();
   }, [Alert]);
