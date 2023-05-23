@@ -13,13 +13,23 @@ export default function MenuMobile({ auth }) {
       <div className={Style['Mobile-Menu']}>
         <ul className={Style.Categorias}>
           <li>
+            <Link href="/dashboard" onClick={() => toggleMenuMobile()}>
+              Dashboard
+            </Link>
+          </li>
+          <li>
             <Link href="/dashboard/products" onClick={() => toggleMenuMobile()}>
               Products
             </Link>
           </li>
           <li>
-            <Link href="/dashboard" onClick={() => toggleMenuMobile()}>
-              Dashboard
+            <Link href="/dashboard/users" onClick={() => toggleMenuMobile()}>
+              Users
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard/categories" onClick={() => toggleMenuMobile()}>
+              Categories
             </Link>
           </li>
         </ul>

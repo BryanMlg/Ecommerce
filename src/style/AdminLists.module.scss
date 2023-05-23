@@ -1,10 +1,26 @@
 @import "@style/Var.scss";
 
+
+
+.main-container button{
+position: sticky;
+top: 60px;
+height: 35px;
+background-color: $--hospital-green;
+border: none;
+width: 100%;
+}
+
 .ProductList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 500px);
 	gap: 10px;
 	place-content: center;
+}
+
+.EditForm{
+	position: sticky;
+	top: 95px;
 }
 
 @media (max-width: 718px) {

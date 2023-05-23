@@ -13,6 +13,7 @@
     border: 4px solid $--text-input-field;
     padding: 15px;
     border-radius: 8px;
+    min-width: 290px;
 }
 
 .Main-Container .Container .Titulo{
@@ -84,7 +85,7 @@
     object-fit: cover;
     position: absolute;
     bottom: 66px;
-    right: 130px;
+    right: 123px;
 }
 
 .Main-Container .Container .primary-button{

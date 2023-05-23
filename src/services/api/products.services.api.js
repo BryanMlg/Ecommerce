@@ -56,4 +56,25 @@ const deleteProduct = async (id) => {
   }
 };
 
-export { GetProducts, GetProductsCategory, deleteProduct };
+const addProduct = async (body) =>{
+  try {
+    const response = await useMakeFetch(endPoints.products.addProducts, 'POST', body );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Error adding product' + error);
+  }
+};
+
+const updateProduct = async (id, body) => {
+  try {
+    const response = await useMakeFetch(endPoints.products.updateProduct(id), 'PUT', body);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error updating product');
+  }
+};
+
+export { GetProducts, GetProductsCategory, deleteProduct, addProduct, updateProduct };

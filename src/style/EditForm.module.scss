@@ -10,16 +10,11 @@
 .FormContainer .Container {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  border: 1px solid $--very-light-pink;
-  width: 400px;
+  width: 100%;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-}
-
-.FormContainer .Container:hover {
-  border: 2px solid $--hospital-green;
+  background-color: white;
 }
 
 .FormContainer .Container label {
@@ -52,11 +47,12 @@
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 .Container .TextDescription {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
+  align-self: center;
 }
 
 .Container .Categorys select {
@@ -102,9 +98,6 @@
 
 .Container .ImageContainer {
   text-align: center;
-}
-
-.Container .ImageContainer {
   background-color: $--hospital-green;
   border-radius: 10px;
   width: 200px;
@@ -133,9 +126,26 @@
   border: none;
   cursor: pointer;
   height: 30px;
-  background-color: $--text-input-field;
+  background-color: $--hospital-green;
 }
 
 .buttonContainer button:hover {
   background-color: $--hospital-green;
+}
+
+.UploadImage{
+  font-size: $--Sm;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $--hospital-green;
+    width: 100%;
+    height: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Datos{
+    outline: none;
+    visibility: hidden;
 }
