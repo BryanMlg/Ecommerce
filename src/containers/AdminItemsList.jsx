@@ -11,7 +11,7 @@ export default function AdminItemsList() {
   const {state, toggleAlertNotification} = useContext(ContextApp);
   const [openEdit, setOpenEdit] = useState(false);
   function getProductsToShow() {
-    const products = GetProducts(undefined, undefined, () => toggleAlertNotification());
+    const products = GetProducts(undefined, undefined,toggleAlertNotification);
     return products.slice(0, useScroll());
   }
   function OpenEditToggle(){
@@ -20,7 +20,7 @@ export default function AdminItemsList() {
   return (
     <section className={Style['main-container']}>
       <button onClick={()=>OpenEditToggle()}>{openEdit ? 'Close' : 'Add Product'}</button>
-       {state.alertNotification && <Alert Message={"Se elimino el producto"} isErrorLogin={false} />}
+       <div className={Style.Alert}>{state.alertNotification && <Alert Message={"Product Deleted"} isErrorLogin={false} />}</div>
        <div className={Style.EditForm}>{openEdit && <EditForm/>}</div>
       <div className={Style.ProductList}>
         {getProductsToShow().map((product) => {

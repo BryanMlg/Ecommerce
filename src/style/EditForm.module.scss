@@ -149,3 +149,8 @@
     outline: none;
     visibility: hidden;
 }
+@media (max-width:500px) {
+  .FormContainer .Container{
+    margin-top: 55px;
+  }
+}

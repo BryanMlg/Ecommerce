@@ -9,6 +9,8 @@ height: 35px;
 background-color: $--hospital-green;
 border: none;
 width: 100%;
+min-width: 500px;
+z-index: 0;
 }
 
 .ProductList {
@@ -21,11 +23,22 @@ width: 100%;
 .EditForm{
 	position: sticky;
 	top: 95px;
+	z-index: 0;
+
 }
 
-@media (max-width: 718px) {
+.Alert{
+	position: fixed;
+	bottom: 10px;
+}
+
+@media (max-width: 500px) {
 	.ProductList {
 		grid-template-columns: repeat(auto-fill, auto);
-        max-width: 600px;
+		min-width: 500px;
 	}
+	.EditForm{
+		top: 40px;
+		width: 500px;
+	}		
 }
