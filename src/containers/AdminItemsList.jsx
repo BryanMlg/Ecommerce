@@ -20,7 +20,7 @@ export default function AdminItemsList() {
   return (
     <section className={Style['main-container']}>
       <button onClick={()=>OpenEditToggle()}>{openEdit ? 'Close' : 'Add Product'}</button>
-       <div className={Style.Alert}>{state.alertNotification && <Alert Message={"Product Deleted"} isErrorLogin={false} />}</div>
+       <div className={Style.Alert}>{state.alertNotification && <Alert/>}</div>
        <div className={Style.EditForm}>{openEdit && <EditForm/>}</div>
       <div className={Style.ProductList}>
         {getProductsToShow().map((product) => {

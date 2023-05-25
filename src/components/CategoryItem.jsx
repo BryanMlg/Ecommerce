@@ -8,8 +8,11 @@ import { deleteCategory } from '@services/api/categorys.services';
 export default function UserItem({ category }) {
   const {toggleAlertNotification} = useContext(ContextApp);
   const handleDelete = (id) => {
-    deleteCategory(id);
-    toggleAlertNotification();
+    deleteCategory(id).then(() =>{
+      toggleAlertNotification("Category Deleted");
+    }).catch(() =>{
+      toggleAlertNotification("DELETE ERROR", true);
+    });
   };
   return (
     <div className={Style.MyOrderContent}>

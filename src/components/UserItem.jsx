@@ -8,8 +8,11 @@ import { deleteUser } from '@services/api/users.services';
 export default function UserItem({ user }) {
   const {toggleAlertNotification} = useContext(ContextApp);
   const handleDelete = (id) => {
-    deleteUser(id);
-    toggleAlertNotification();
+    deleteUser(id).then(() =>{
+      toggleAlertNotification("User Deleted");
+    }).catch(() => {
+      toggleAlertNotification("DELETE ERROR", true);
+    });
   };
   return (
     <div className={Style.MyOrderContent}>

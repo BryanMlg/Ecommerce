@@ -14,7 +14,7 @@ export default function AdminItemsList() {
   }
   return (
     <section className={Style['main-container']}>
-      <div className={Style.Alert}>{state.alertNotification && <Alert Message={"Category Deleted"} isErrorLogin={false} />}</div>
+      <div className={Style.Alert}>{state.alertNotification && <Alert />}</div>
       <div className={Style.ProductList}>
         {getCategoriesToShow().map((category) => {
           if (category.avatar !== null) {

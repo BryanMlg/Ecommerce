@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ContextApp } from '@context/ContextApp';
 
 export default function Alert({ Message, isErrorLogin }) {
-  const { state, toggleAlertNotification } = useContext(ContextApp);
+  const { state, toggleAlertNotification, message, typeAlert } = useContext(ContextApp);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -27,21 +27,21 @@ export default function Alert({ Message, isErrorLogin }) {
     return null; // Si el componente ya no es visible, no se renderiza nada
   }
 
-  if (isErrorLogin) {
+  if (typeAlert || isErrorLogin) {
     return (
       <aside className={Style.container}>
         <div className={Style.alertContainer}>
-          <p>{Message}</p>
+          <p>{message || Message}</p>
         </div>
         {state.menuProductInfoIsOpen ?? <Alert />}
       </aside>
     );
-  } else {
+  }else{
     return (
       <aside className={Style.Container}>
         <div className={Style.AlertContainer}>
           <Image className={Style.Close} src={CloseIcon} width={20} height={20} alt="Close" onClick={() => toggleAlertNotification()} />
-          <p>{Message}</p>
+          <p>{message}</p>
         </div>
         {state.menuProductInfoIsOpen ?? <Alert />}
       </aside>

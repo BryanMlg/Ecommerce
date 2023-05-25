@@ -1,9 +1,23 @@
 import Style from '@style/EditForm.module.scss';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { addProduct, updateProduct } from '@services/api/products.services.api';
 import { useRouter } from 'next/router';
+import { ContextApp } from '@context/ContextApp';
+import Image from 'next/image';
 export default function EditForm({ product }) {
+  const {toggleAlertNotification} = useContext(ContextApp);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      setSelectedImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -24,14 +38,16 @@ export default function EditForm({ product }) {
     if (product) {
       updateProduct(product?.id, data).then(() => {
         router.push('/dashboard/products/');
+      }).then(() => {
+        toggleAlertNotification("Product Edited");
       });
     } else {
       addProduct(data)
         .then(() => {
-          alert('product added');
+          toggleAlertNotification("Product Added");
         })
-        .catch(error => {
-          alert(error);
+        .catch(() => {
+          toggleAlertNotification("NEED ALL INFORMATION", true);
         });
     }
   };
@@ -68,9 +84,10 @@ export default function EditForm({ product }) {
         <div className={Style.buttonContainer}>
           <button type="submit">Save</button>
           <label className={Style.UploadImage} htmlFor="Image">
-            Upload Image
+          {selectedImage ? <Image className={Style.Image}  src={selectedImage} alt="Selected" width={50} height={50} /> : 'Upload Image'}
           </label>
-          <input name="image" id="Image" type="file" accept="image/*" className={Style.Datos} required />
+          <input onChange={handleFileChange} name="image" id="Image" type="file" accept="image/*" className={Style.Datos} required />
+        
         </div>
       </div>
     </form>

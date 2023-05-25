@@ -14,7 +14,7 @@ export default function AdminItemsList() {
   }
   return (
     <section className={Style['main-container']}>
-       <div className={Style.Alert}>{state.alertNotification && <Alert Message={"User Deleted"} isErrorLogin={false} />}</div>
+       <div className={Style.Alert}>{state.alertNotification && <Alert/>}</div>
       <div className={Style.ProductList}>
         {getUsersToShow().map((user) => {
           if (user.avatar !== null) {

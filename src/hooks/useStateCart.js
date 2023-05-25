@@ -12,7 +12,9 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const [ProductDescription, setProductDescription] = useState(null);
-
+  const [message, setMessage] = useState('');
+  //true = error false = success
+  const [typeAlert, setTypeAlert] = useState(false);
   const addToCart = (payload) => {
     setState({
       ...state,
@@ -68,13 +70,15 @@ const useInitialState = () => {
     });
   };
 
-  const toggleAlertNotification = () => {
+  const toggleAlertNotification = (AlertMessage, TypeAlert) => {
+    setMessage(AlertMessage);
+    setTypeAlert(TypeAlert);
     setState({
       ...state,
       alertNotification: !state.alertNotification,
     });
   };
 
-  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile, toggleMenuProductInfo, ProductDescription, toggleAlertNotification };
+  return { state, addToCart, RemoveFromCart, toggleOrder, toggleMenu, toggleMenuMobile, toggleMenuProductInfo, ProductDescription, toggleAlertNotification, message, typeAlert };
 };
 export default useInitialState;

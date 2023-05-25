@@ -9,8 +9,12 @@ import Link from 'next/link';
 export default function AdminItem({ product }) {
   const {toggleAlertNotification} = useContext(ContextApp);
   const handleDelete = (id) => {
-    deleteProduct(id);
-    toggleAlertNotification();
+    deleteProduct(id).then(() =>{
+      toggleAlertNotification("Product Deleted");
+    }).catch(()=>{
+      toggleAlertNotification("DELETE ERROR", true);
+    });
+    
   };
   return (
     <>

@@ -30,6 +30,7 @@ z-index: 0;
 .Alert{
 	position: fixed;
 	bottom: 10px;
+	z-index: 1;
 }
 
 @media (max-width: 500px) {
