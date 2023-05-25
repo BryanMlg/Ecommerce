@@ -9,6 +9,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" width="52" alt="sass logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />  
 </div>
+<h2>Accounts</h2>
 <h4>SuperAdmin: ------ </h4>
 <h4>Admin: admin@mail.com | Password: admin123</h4>
 <h4>Customer: john@mail.com | Password: changeme</h4>
@@ -17,7 +18,7 @@
 <br>
 
 <img src="https://github.com/BryanMlg/Ecommerce/assets/49600985/b1309dcd-8206-4192-9b85-cd26bfb3fa23"/>
-
+[LINK](https://ecommerce-phi-orcin.vercel.app/)
 <br>
 <br>
 <br>
