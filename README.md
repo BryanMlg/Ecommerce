@@ -10,6 +10,14 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />  
 </div>
 <br>
+<br>
+<br>
+
+<img src="https://github.com/BryanMlg/Ecommerce/assets/49600985/b1309dcd-8206-4192-9b85-cd26bfb3fa23"/>
+
+<br>
+<br>
+<br>
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
