@@ -9,7 +9,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="40" width="52" alt="sass logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />  
 </div>
-<h4>SuperAdmin: ------ | Admin: admin@mail.com | Password: admin123</h4>
+<h4>SuperAdmin: ------ </h4>
+<h4>Admin: admin@mail.com | Password: admin123</h4>
 <h4>Customer: john@mail.com | Password: changeme</h4>
 <br>
 <br>
