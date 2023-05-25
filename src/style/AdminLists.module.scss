@@ -1,16 +1,17 @@
 @import "@style/Var.scss";
 
 
-
 .main-container button{
 position: sticky;
-top: 60px;
-height: 35px;
+top: 61px;
+height: 50px;
 background-color: $--hospital-green;
 border: none;
 width: 100%;
 min-width: 500px;
-z-index: 0;
+z-index: 1;
+padding: 0;
+margin-bottom: 5px;
 }
 
 .ProductList {
@@ -22,9 +23,8 @@ z-index: 0;
 
 .EditForm{
 	position: sticky;
-	top: 95px;
+	top: 110px;
 	z-index: 0;
-
 }
 
 .Alert{
@@ -36,10 +36,10 @@ z-index: 0;
 @media (max-width: 500px) {
 	.ProductList {
 		grid-template-columns: repeat(auto-fill, auto);
-		min-width: 500px;
+		min-width: 490px;
 	}
 	.EditForm{
-		top: 40px;
+		top: 55px;
 		width: 500px;
 	}		
 }

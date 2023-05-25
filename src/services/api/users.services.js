@@ -25,7 +25,7 @@ const deleteUser = async (id) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('Error deleting product' + error);
+    throw new Error('Error deleting user | ' + error);
   }
 };
 
@@ -35,8 +35,9 @@ const userIsAvailable = async (email) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('Error deleting product' + error);
+    throw new Error('User already exist | ' + error);
   }
 };
+
 
 export { GetUsers, deleteUser, userIsAvailable };

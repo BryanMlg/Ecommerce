@@ -11,8 +11,8 @@ export default function AdminItem({ product }) {
   const handleDelete = (id) => {
     deleteProduct(id).then(() =>{
       toggleAlertNotification("Product Deleted");
-    }).catch(()=>{
-      toggleAlertNotification("DELETE ERROR", true);
+    }).catch((error)=>{
+      toggleAlertNotification(error.message, true);
     });
     
   };

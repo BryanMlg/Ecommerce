@@ -3,9 +3,10 @@ import React, { useState, useRef, useContext } from 'react';
 import { addProduct, updateProduct } from '@services/api/products.services.api';
 import { useRouter } from 'next/router';
 import { ContextApp } from '@context/ContextApp';
+import uploadImage from '@services/uploadFile';
 import Image from 'next/image';
-export default function EditForm({ product }) {
-  const {toggleAlertNotification} = useContext(ContextApp);
+export default function EditForm({ item }) {
+  const { toggleAlertNotification } = useContext(ContextApp);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -24,7 +25,8 @@ export default function EditForm({ product }) {
 
   const formRef = useRef(null);
   const router = useRouter();
-  const handleSubmit = event => {
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(formRef.current);
     const data = {
@@ -35,33 +37,41 @@ export default function EditForm({ product }) {
       images: [formData.get('image').name],
     };
 
-    if (product) {
-      updateProduct(product?.id, data).then(() => {
-        router.push('/dashboard/products/');
-      }).then(() => {
-        toggleAlertNotification("Product Edited");
+    uploadImage(formData.get('image'))
+      .then((res) => {
+        if (item) {
+          updateProduct(item.id, { ...data, images: [res.location] })
+            .then(() => {
+              router.push('/dashboard/products/');
+            })
+            .then(() => {
+              toggleAlertNotification('Product Edited');
+            });
+        } else {
+          addProduct({ ...data, images: [res.location] })
+            .then(() => {
+              toggleAlertNotification('Product Added');
+            })
+            .catch((error) => {
+              toggleAlertNotification(error.message, true);
+            });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    } else {
-      addProduct(data)
-        .then(() => {
-          toggleAlertNotification("Product Added");
-        })
-        .catch(() => {
-          toggleAlertNotification("NEED ALL INFORMATION", true);
-        });
-    }
   };
 
   return (
     <form className={Style.FormContainer} ref={formRef} onSubmit={handleSubmit}>
       <div className={Style.Container}>
-        {product?.id && <span>{`ID: ${product?.id}`}</span>}
-        {product?.category && <span>{`Category: ${product?.category?.name}`}</span>}
+        {item?.id && <span>{`ID: ${item?.id}`}</span>}
+        {item?.category && <span>{`Category: ${item?.category?.name}`}</span>}
         <div className={Style.ContainerTitlePrice}>
           <label htmlFor="title">Title</label>
-          <input className={Style.Input} defaultValue={product?.title} id="title" name="title" type="text" />
+          <input className={Style.Input} defaultValue={item?.title} id="title" name="title" type="text" />
           <label htmlFor="price">Price</label>
-          <input className={Style.Input} defaultValue={product?.price} id="price" name="price" type="number" />
+          <input className={Style.Input} defaultValue={item?.price} id="price" name="price" type="number" />
         </div>
         <div className={Style.Categorys}>
           <label className={Style.Label} htmlFor="category">
@@ -79,15 +89,14 @@ export default function EditForm({ product }) {
           <label className={Style.Label} htmlFor="description">
             Description
           </label>
-          <textarea defaultValue={product?.description} autoComplete="description" id="description" name="description" rows="3" />
+          <textarea defaultValue={item?.description} autoComplete="description" id="description" name="description" rows="3" />
         </div>
         <div className={Style.buttonContainer}>
           <button type="submit">Save</button>
           <label className={Style.UploadImage} htmlFor="Image">
-          {selectedImage ? <Image className={Style.Image}  src={selectedImage} alt="Selected" width={50} height={50} /> : 'Upload Image'}
+            {selectedImage ? <Image className={Style.Image} src={selectedImage} alt="Selected" width={50} height={50} /> : 'Upload Image'}
           </label>
           <input onChange={handleFileChange} name="image" id="Image" type="file" accept="image/*" className={Style.Datos} required />
-        
         </div>
       </div>
     </form>

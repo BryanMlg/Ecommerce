@@ -31,7 +31,7 @@ export default function CreateAccount() {
       name: formData.get('name'),
       image: [formData.get('image').name],
     };
-    if (!data.username || !data.name || !data.password) {
+    if (!data.username || !data.name || !data.password || !data.image) {
       setError('Please enter all your information');
     } else {
       uploadImage(formData.get('image'))

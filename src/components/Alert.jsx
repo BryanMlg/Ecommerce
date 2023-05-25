@@ -13,7 +13,7 @@ export default function Alert({ Message, isErrorLogin }) {
       const timer = setTimeout(() => {
         setVisible(false);
         toggleAlertNotification(); // Ocultar la notificación en el estado
-      }, 3000);
+      }, 2000);
 
       return () => {
         clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta antes de que expire el tiempo

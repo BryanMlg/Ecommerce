@@ -4,6 +4,7 @@ import Router from 'next/router';
 import { Chart } from '@components/Chart';
 import { GetProducts } from '@services/api/products.services.api';
 import { GetUsers } from '@services/api/users.services';
+import Style from '@style/AdminItem.module.scss';
 export default function Dashboard() {
   const auth = useContext(authContext);
 
@@ -22,7 +23,7 @@ export default function Dashboard() {
       {
         label: 'Products',
         data: countOccurrences(categoryCount),
-        borderWidth: 5,
+        borderWidth: 1,
         backgroundColor: ['#ffbb11', '#c0c0c0', '#50AF95', 'f3ba2f', '#2a71d0'],
       },
     ],
@@ -33,7 +34,7 @@ export default function Dashboard() {
       {
         label: 'Users',
         data: countOccurrences(userRoleCount),
-        borderWidth: 5,
+        borderWidth: 1,
         backgroundColor: ['#ffbb11', '#c0c0c0', '#50AF95', 'f3ba2f', '#2a71d0'],
       },
     ],
@@ -49,8 +50,10 @@ export default function Dashboard() {
   return (
     <>
       {VerifyRole()}
+      <div className={Style.Charts}>
       <Chart chartData={dataProducts} />;
       <Chart chartData={dataUsers} />;
+      </div>
     </>
   );
 }

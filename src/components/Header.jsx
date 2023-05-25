@@ -31,7 +31,7 @@ const Header = () => {
           <nav>
             <Image className={Style.Menu} src={MenuLogo} alt="Menu" onClick={() => toggleMenuMobile()} />
             <div className={Style.Left}>
-              <Link href="/">
+              <Link href="/dashboard">
                 <Image className={Style.Logo} src={Logo} alt="Logo" />
               </Link>
               <ul className={Style.ListaLeft}>

@@ -52,7 +52,7 @@ const deleteProduct = async (id) => {
       const data = await response.json();
       return data;
   } catch (error){
-    throw new Error('Error deleting product' + error);
+    throw new Error('product already removed | ' + error);
   }
 };
 
@@ -62,7 +62,7 @@ const addProduct = async (body) =>{
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('Error adding product' + error);
+    throw new Error('need all information | ' + error);
   }
 };
 
@@ -73,7 +73,7 @@ const updateProduct = async (id, body) => {
     return data;
   } catch (error) {
     console.error(error);
-    throw new Error('Error updating product');
+    throw new Error('Error updating product | ' + error);
   }
 };
 

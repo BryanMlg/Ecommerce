@@ -1,7 +1,7 @@
 @import '@style/Var.scss';
 
 .MyOrderContent {
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +60,12 @@
 }
 @media (max-width: 500px) {
   .MyOrderContent {
-    margin-top: 50px;
+    margin-top: 0px;
   }
 }
+@media (max-width: 500px) {
+  .Charts{
+    margin-top: 65px;
+  }
+}
+

@@ -17,7 +17,7 @@ const useMakeFetch = async (path = '', method = '', body = {}) => {
     }
     const response = await fetch(path, options);
     if (!response.ok) {
-      throw new Error('Request failed');
+      throw new Error(response.status);
     }
     return response;
   };
