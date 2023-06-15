@@ -10,7 +10,7 @@ export default function AdminItemsList() {
   const {state, toggleAlertNotification} = useContext(ContextApp);
   function getCategoriesToShow() {
     const categories = GetCategories(toggleAlertNotification);
-    return categories.slice(0, useScroll());
+    return categories.slice(0, useScroll(12));
   }
   return (
     <section className={Style['main-container']}>

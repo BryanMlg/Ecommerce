@@ -21,7 +21,7 @@ export default function ProductList({ categoryId }) {
     } else {
       products = GetProducts();
     }
-    return products.slice(0, UseScroll());
+    return products.slice(0, UseScroll(10));
   }
 
   return (

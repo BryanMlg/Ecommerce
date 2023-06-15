@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Close from '@assets/icon_close.png';
 import AddToCart from '@assets/bt_add_to_cart.svg';
 import { useContext } from 'react';
-import {ContextApp} from '@context/ContextApp';
+import { ContextApp } from '@context/ContextApp';
 import AgregadoCarrito from '@assets/bt_added_to_cart.svg';
 import { useState } from 'react';
 import { Loading, Grid } from '@nextui-org/react';
@@ -27,24 +27,25 @@ export default function ProductInfo() {
       <div className={Style['Product-Detail-Close']} onClick={() => toggleMenuProductInfo(null)} role="figure">
         <Image src={Close} alt="close" width={50} height={50} />
       </div>
-      {!imageLoaded && (
+      <div className={Style['image-container']}>
+        {!imageLoaded && (
           <div className={Style['loading-container']}>
             <Grid>
               <Loading color="success"></Loading>
             </Grid>
           </div>
         )}
-      <Image
-        className={Style.ProductImg}
-        priority={true}
-        unoptimized={() => ProductDescription.images[currentImageIndex]}
-        src={ProductDescription.images[currentImageIndex]}
-        alt={ProductDescription.title}
-        width="240"
-        height="240"
-        onLoad={handleImageLoad} 
-      />
-      
+        <Image
+          className={Style.ProductImg}
+          priority={true}
+          unoptimized={() => ProductDescription.images[currentImageIndex]}
+          src={ProductDescription.images[currentImageIndex]}
+          alt={ProductDescription.title}
+          width="240"
+          height="240"
+          onLoad={handleImageLoad}
+        />
+      </div>
       <div className={Style.Dots}>
         {ProductDescription.images.map((_, index) => (
           <span role="banner" key={index} className={`${Style.dot} ${currentImageIndex === index ? Style.active : ''}`} onClick={() => setCurrentImageIndex(index)}></span>

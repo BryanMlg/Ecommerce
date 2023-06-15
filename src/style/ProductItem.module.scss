@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.CategoryName{
+.CategoryName {
   writing-mode: tb-rl;
   text-orientation: upright;
   position: absolute;
@@ -27,8 +27,8 @@
 }
 
 .loading-container {
-	position: absolute;
-	bottom: 50%;
+  position: absolute;
+  bottom: 50%;
   z-index: -1;
 }
 .ProductItem img {
@@ -113,5 +113,9 @@
     height: 10px;
     text-align: center;
     width: 127px;
+  }
+  .loading-container {
+    position: absolute;
+    bottom: 30%;
   }
 }

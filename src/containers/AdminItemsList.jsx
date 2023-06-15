@@ -12,7 +12,7 @@ export default function AdminItemsList() {
   const [openEdit, setOpenEdit] = useState(false);
   function getProductsToShow() {
     const products = GetProducts(undefined, undefined,toggleAlertNotification);
-    return products.slice(0, useScroll());
+    return products.slice(0, useScroll(12));
   }
   function OpenEditToggle(){
     setOpenEdit(!openEdit);

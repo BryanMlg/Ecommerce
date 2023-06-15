@@ -10,7 +10,7 @@ export default function AdminItemsList() {
   const { state, toggleAlertNotification } = useContext(ContextApp);
   function getUsersToShow() {
     const users = GetUsers(toggleAlertNotification);
-    return users.slice(0, useScroll());
+    return users.slice(0, useScroll(12));
   }
   return (
     <section className={Style['main-container']}>

@@ -1,134 +1,144 @@
-@import "@style/Var.scss";
+@import '@style/Var.scss';
 
 .Product-Detail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 80%;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    border: solid 1px $--very-light-pink;
-    border-radius: 5px;
-    z-index: 1;
-    background-color: $--white;
-    height: 210px;
-  }
-  .loading-container {
-    position: absolute;
-    top: 85px;
-    left: 135px;
-  }
-  aside .Product-Detail-Close {
-    background: $--white;
-    width: 10px;
-    height: 10px;
-    z-index: 2;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    border-radius: 50%;
-    border: solid 1px $--very-light-pink;
-  }
-
-  .Product-Detail-Close:hover {
-    cursor: pointer;
-  }
-
-  aside .Product-Detail-Close img{
-    display: flex;
-    width: 10px;
-    height: 10px;
-  }
-
-aside .ProductImg{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80%;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  border: solid 1px $--very-light-pink;
+  border-radius: 5px;
+  z-index: 1;
+  background-color: $--white;
+  height: 210px;
+}
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.loading-container {
+  position: absolute;
+  bottom: 40%;
+}
+aside .Product-Detail-Close {
+  background: $--white;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  border: solid 1px $--very-light-pink;
 }
 
-aside .Dots{
-    width: 300px;
-    text-align: center;
-    margin-top: 10px;
+.Product-Detail-Close:hover {
+  cursor: pointer;
+}
+
+aside .Product-Detail-Close img {
+  display: flex;
+  width: 10px;
+  height: 10px;
+}
+
+aside .ProductImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15%;
+}
+
+aside .Dots {
+  width: 300px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 aside .Dots .dot {
-    height: 25px;
-    width: 25px;
-    background-color: $--very-light-pink;
-    cursor: pointer;
-    margin: 0 5px;
-    border-radius: 50%;
-    display: inline-flex
+  height: 25px;
+  width: 25px;
+  background-color: $--very-light-pink;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 50%;
+  display: inline-flex;
 }
 aside .Dots .dot.active {
   background-color: $--hospital-green;
 }
 
-aside .Dots .dot:hover{
+aside .Dots .dot:hover {
   background-color: $--hospital-green;
 }
 
-aside .Product-Info{
-    width: 500px;
-    padding-right: 20px;
+aside .Product-Info {
+  width: 500px;
+  padding-right: 20px;
 }
-aside .Product-Info p:first-child{
-font-weight: bold;
-font-size: $--Lg;
+aside .Product-Info p:first-child {
+  font-weight: bold;
+  font-size: $--Lg;
 }
-aside .Product-Info p:nth-child(2){
-    font-size: $--Md;
+aside .Product-Info p:nth-child(2) {
+  font-size: $--Md;
 }
-aside .Product-Info p:nth-child(3),aside .Product-Info p:nth-child(2){
-color: $--very-light-pink;
-}
-
-aside .Product-Info p:nth-child(3){
-    font-size: $--Sm;
+aside .Product-Info p:nth-child(3),
+aside .Product-Info p:nth-child(2) {
+  color: $--very-light-pink;
 }
 
-aside .Product-Info .AddCart{
-    background-color: $--hospital-green;
-    border: none;
-    border-radius: 10px;
-    color: $--white;
-    height: 35px;
-    width: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+aside .Product-Info p:nth-child(3) {
+  font-size: $--Sm;
 }
-aside .Product-Info .AddCart .IconAdd{
+
+aside .Product-Info .AddCart {
+  background-color: $--hospital-green;
+  border: none;
+  border-radius: 10px;
+  color: $--white;
+  height: 35px;
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+aside .Product-Info .AddCart .IconAdd {
   height: 30px;
   width: 30px;
 }
 
-@media (max-width:718px) {
+@media (max-width: 718px) {
   .Product-Detail {
     flex-direction: column;
     height: 100%;
     text-align: center;
   }
-  aside .Product-Info .AddCart{
+  aside .Product-Info .AddCart {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-aside .Product-Info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-aside .Product-Detail-Close{
-  position: absolute;
-  left: 0;
-  top: 10px;
-}
+  }
+  aside .Product-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  aside .Product-Detail-Close {
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+  .loading-container {
+    position: absolute;
+    bottom: 40%;
+  }
 }
